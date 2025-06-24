@@ -1,0 +1,94 @@
+/* Creative Card Styling */
+#creative-financing .creative-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 204, 0, 0.7);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#creative-financing .creative-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 204, 0, 0.6);
+}
+
+#creative-financing .creative-card h3 {
+    color: #ffd700;
+    font-size: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1rem;
+}
+
+#creative-financing .creative-card p {
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+#creative-financing .creative-card button {
+    background: #ffd700;
+    color: #1e40af;
+    padding: 0.75rem 1.5rem;
+    border-radius: 20px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#creative-financing .creative-card button:hover {
+    background: #fbbf24;
+    transform: scale(1.1);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 640px) {
+    #creative-financing .creative-card {
+        padding: 1.5rem;
+        margin: 0 auto;
+        max-width: 90%; /* Ensures cards don’t stretch too wide on small screens */
+    }
+
+    #creative-financing .creative-card h3 {
+        font-size: 1.25rem; /* Slightly smaller heading on mobile */
+    }
+
+    #creative-financing .creative-card p {
+        font-size: 0.875rem; /* Smaller text for better fit */
+    }
+
+    #creative-financing .creative-card button {
+        padding: 0.5rem 1rem; /* Smaller button padding */
+        font-size: 0.875rem; /* Smaller button text */
+    }
+
+    #creative-financing .grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centers cards horizontally */
+        gap: 1.5rem; /* Consistent spacing between cards */
+    }
+
+    #creative-financing .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    #creative-financing h2 {
+        font-size: 2rem; /* Adjusted heading size for mobile */
+        margin-bottom: 2rem;
+    }
+}
+
+/* Ensure centering on larger screens */
+@media (min-width: 641px) {
+    #creative-financing .creative-card {
+        max-width: 100%; /* Full width within grid column */
+    }
+}

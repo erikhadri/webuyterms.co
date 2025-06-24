@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Buy Vegas Houses—your local Las Vegas experts offering fast, fair offers and creative financing for homes with no fees or repairs needed.">
+    <meta name="keywords" content="about us, sell house fast, creative offers for houses, Las Vegas home buyers, Buy Vegas Houses">
+    <meta name="author" content="Buy Vegas Houses">
+    <title>About | Buy Vegas Houses - Sell Your House Fast in Las Vegas</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="/output.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS for animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Custom Animations */
+        @keyframes glow {
+            0% { box-shadow: 0 0 10px rgba(255, 204, 0, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(255, 204, 0, 0.8); }
+            100% { box-shadow: 0 0 10px rgba(255, 204, 0, 0.5); }
+        }
+        .glow-effect { animation: glow 2s infinite; }
+        .card-hover:hover { transform: translateY(-10px) scale(1.05); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); }
+        @media (max-width: 640px) {
+            .card-hover:active { transform: translateY(-10px) scale(1.05); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); }
+        }
+        /* Custom Font Styles */
+        body { font-family: 'Poppins', sans-serif; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        nav a, button, .font-semibold { font-family: 'Montserrat', sans-serif; }
+        /* Flip Card Styles */
+        .flip-card {
+            perspective: 1000px;
+            width: 100%;
+            height: 300px;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .flip-card:hover .flip-card-inner, .flip-card:active .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+        .flip-card-front { background-color: #fff; }
+        .flip-card-back { background-color: #fff; transform: rotateY(180deg); }
+        .flip-card img { width: 100%; height: 100%; object-fit: cover; }
+        /* Gorgeous Photo Styling */
+        .gorgeous-photo {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 204, 0, 0.6);
+            border: 4px solid #ffd700;
+            background: linear-gradient(45deg, rgba(255, 215, 0, 0.2), rgba(255, 255, 255, 0.1));
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+        .gorgeous-photo:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 204, 0, 0.8);
+        }
+        .gorgeous-photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 16px;
+        }
+        .gorgeous-photo::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border-radius: 24px;
+            background: radial-gradient(circle, rgba(255, 204, 0, 0.3), transparent);
+            z-index: -1;
+        }
+        /* Stunning Section Divider */
+        .section-divider {
+            position: relative;
+            height: 80px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+        .section-divider::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, transparent, #ffd700, transparent);
+            animation: slideGradient 3s infinite linear;
+        }
+        .section-divider::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: url('https://img.icons8.com/ios-filled/50/ffd700/home.png') no-repeat center;
+            background-size: contain;
+            animation: pulseIcon 2s infinite ease-in-out;
+            z-index: 1;
+        }
+        @keyframes slideGradient {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        @keyframes pulseIcon {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+    </style>
+</head>
+<body class="text-gray-800 bg-gradient-to-br from-blue-700 to-green-700">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full bg-gradient-to-r from-blue-700 to-green-700 shadow-lg z-50">
+        <div class="container mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+            <div class="text-2xl font-extrabold text-white">Buy Vegas Houses</div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-white hover:text-yellow-200 transition-colors">Home</a>
+                <a href="sell.html" class="text-white hover:text-yellow-200 transition-colors">Sell</a>
+                <a href="about.html" class="text-white hover:text-yellow-200 transition-colors">About</a>
+                <a href="contact.html" class="text-white hover:text-yellow-200 transition-colors">Contact</a>
+                <a href="how-it-works.html" class="text-white hover:text-yellow-200 transition-colors">How It Works</a>
+            </nav>
+            <a href="sell.html" class="bg-yellow-300 text-blue-800 px-4 py-2 rounded-full hover:bg-yellow-400 transition">Sell Your Home</a>
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-gradient-to-b from-blue-700 to-green-700 shadow-lg absolute w-full">
+            <nav class="flex flex-col items-center py-4 space-y-4">
+                <a href="index.html" class="text-white hover:text-yellow-200 transition-colors">Home</a>
+                <a href="sell.html" class="text-white hover:text-yellow-200 transition-colors">Sell</a>
+                <a href="about.html" class="text-white hover:text-yellow-200 transition-colors">About</a>
+                <a href="contact.html" class="text-white hover:text-yellow-200 transition-colors">Contact</a>
+                <a href="how-it-works.html" class="text-white hover:text-yellow-200 transition-colors">How It Works</a>
+            </nav>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section id="about-hero" class="relative bg-cover bg-center h-screen" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1920&auto=format&fit=crop');">
+        <div class="absolute inset-0 bg-gradient-to-b from-blue-700/60 to-green-700/60"></div>
+        <div class="container mx-auto px-4 sm:px-6 h-full flex items-center justify-center relative z-10">
+            <div class="text-center text-white">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 drop-shadow-lg animate-fade-in">About Buy Vegas Houses</h1>
+                <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-6 sm:mb-8 font-light tracking-wide drop-shadow-md">Your Local Las Vegas Experts in Creative Financing</p>
+                <div class="max-w-sm sm:max-w-md mx-auto bg-white/10 backdrop-blur-md p-6 sm:p-8 rounded-xl shadow-2xl border border-white/30 relative overflow-hidden">
+                    <form id="hero-form" class="relative z-10">
+                        <h2 class="text-xl sm:text-2xl font-semibold text-yellow-200 mb-4 sm:mb-6">Get Your Free Offer</h2>
+                        <input type="text" placeholder="Enter Your Address" class="w-full p-3 sm:p-4 mb-4 border border-white/40 rounded-lg bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-300 transition-all">
+                        <button type="submit" onclick="window.location.href='about.html#contact-us-3-section'" class="w-full bg-yellow-300 text-blue-800 p-3 sm:p-4 rounded-lg hover:bg-yellow-400 hover:text-blue-900 hover:scale-105 transition-all duration-300 font-semibold shadow-md">Submit</button>
+                    </form>
+                    <p class="mt-4 sm:mt-6 text-sm sm:text-lg font-medium">Or Call Us: <a href="tel:775 990 8015" class="text-yellow-200 hover:text-yellow-300 transition-colors duration-200 font-bold">(775) 990-8015</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 sm:py-24 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1920&auto=format&fit=crop');" data-aos="fade-up">
+        <div class="absolute inset-0 bg-gradient-to-b from-blue-700/60 to-green-700/60"></div>
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-white mb-6 sm:mb-8 text-center drop-shadow-lg">Who We Are</h2>
+            <p class="text-base sm:text-xl text-white mb-4 text-center max-w-3xl mx-auto font-light tracking-wide bg-white/10 backdrop-blur-md p-4 sm:p-6 rounded-xl shadow-md border border-white/30">
+                At Buy Vegas Houses, we’re your local Las Vegas experts dedicated to making home selling fast, fair, and hassle-free. Whether you need a quick offer or creative financing solutions, we’ve got you covered—no fees, no repairs, and closings as fast as 14 days.
+            </p>
+            <div class="text-center my-6">
+                <a href="#contact-us-3-section" class="inline-block bg-yellow-300 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold shadow-md border border-yellow-400 hover:bg-yellow-400 hover:text-blue-900 hover:scale-105 transition-all duration-300 glow-effect">Get Started</a>
+            </div>
+            <div class="mt-8 mx-auto max-w-full sm:max-w-2xl gorgeous-photo">
+                <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=1920&auto=format&fit=crop" alt="About Visual">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Our Mission Section (Flip Cards) -->
+    <section id="mission" class="py-16 sm:py-24 bg-gradient-to-br from-blue-700 to-green-700 relative" data-aos="fade-up">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-700 to-green-700"></div>
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-white mb-8 sm:mb-12 text-center drop-shadow-lg">Our Mission</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-10">
+                <div>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1920&auto=format&fit=crop" alt="Speed Front">
+                            </div>
+                            <div class="flip-card-back">
+                                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1920&auto=format&fit=crop" alt="Speed Back">
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-white text-base sm:text-lg font-semibold text-center mt-4">Fast Solutions</p>
+                    <div class="text-center mt-2">
+                        <a href="#contact-us-3-section" class="inline-block bg-yellow-300 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold shadow-md border border-yellow-400 hover:bg-yellow-400 hover:text-blue-900 hover:scale-105 transition-all duration-300 glow-effect">Sell Fast</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=1920&auto=format&fit=crop" alt="Fairness Front">
+                            </div>
+                            <div class="flip-card-back">
+                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1920&auto=format&fit=crop" alt="Fairness Back">
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-white text-base sm:text-lg font-semibold text-center mt-4">Fair Offers</p>
+                    <div class="text-center mt-2">
+                        <a href="#contact-us-3-section" class="inline-block bg-yellow-300 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold shadow-md border border-yellow-400 hover:bg-yellow-400 hover:text-blue-900 hover:scale-105 transition-all duration-300 glow-effect">Get Offer</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1920&auto=format&fit=crop" alt="Flexibility Front">
+                            </div>
+                            <div class="flip-card-back">
+                                <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=1920&auto=format&fit=crop" alt="Flexibility Back">
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-white text-base sm:text-lg font-semibold text-center mt-4">Flexible Financing</p>
+                    <div class="text-center mt-2">
+                        <a href="#contact-us-3-section" class="inline-block bg-yellow-300 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold shadow-md border border-yellow-400 hover:bg-yellow-400 hover:text-blue-900 hover:scale-105 transition-all duration-300 glow-effect">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Contact Section -->
+    <section id="contact-us-3-section" class="py-16 sm:py-24 bg-gradient-to-br from-blue-700 to-green-700 relative" data-aos="fade-up">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-700 to-green-700"></div>
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-white mb-8 sm:mb-12 text-center drop-shadow-md">Get Your Free Offer Now</h2>
+            <div class="contact_us_2">
+                <div class="responsive-container-block big-container">
+                    <div class="blueBG"></div>
+                    <div class="responsive-container-block container">
+                        <form id="contact-us-3-form" class="form-box bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-lg p-6 sm:p-8 rounded-2xl shadow-2xl border border-white/40" novalidate>
+                            <input type="hidden" name="form_type" value="Contact Us 3 Form">
+                            <div class="container-block form-wrapper">
+                                <p class="text-blk contactus-head text-2xl sm:text-3xl font-semibold text-yellow-200 mb-4">Get in Touch</p>
+                                <p class="text-blk contactus-subhead text-white text-sm sm:text-base mb-4 sm:mb-6">Contact us for a free cash offer today!</p>
+                                <div class="responsive-container-block grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                                    <div class="responsive-cell-block">
+                                        <p class="text-blk input-title text-white text-sm sm:text-base">FIRST NAME</p>
+                                        <input class="input w-full p-3 sm:p-4 rounded-lg bg-white/80 text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-300" id="ijowk" name="FirstName" placeholder="Please enter first name...*" required>
+                                    </div>
+                                    <div class="responsive-cell-block">
+                                        <p class="text-blk input-title text-white text-sm sm:text-base">LAST NAME</p>
+                                        <input class="input w-full p-3 sm:p-4 rounded-lg bg-white/80 text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-300" id="indfi" name="LastName" placeholder="Please enter last name...*" required>
+                                    </div>
+                                    <div class="responsive-cell-block">
+                                        <p class="text-blk input-title text-white text-sm sm:text-base">EMAIL</p>
+                                        <input class="input w-full p-3 sm:p-4 rounded-lg bg-white/80 text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-300" id="ipmgh" name="Email" type="email" placeholder="Please enter email...*" required>
+                                    </div>
+                                    <div class="responsive-cell-block">
+                                        <p class="text-blk input-title text-white text-sm sm:text-base">PHONE NUMBER</p>
+                                        <input class="input w-full p-3 sm:p-4 rounded-lg bg-white/80 text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-300" id="imgis" name="PhoneNumber" type="tel" placeholder="Please enter phone number...*" required>
+                                    </div>
+                                    <div class="responsive-cell-block col-span-1 sm:col-span-2">
+                                        <p class="text-blk input-title text-white text-sm sm:text-base">WHAT DO YOU HAVE IN MIND</p>
+                                        <textarea class="textinput w-full p-3 sm:p-4 rounded-lg bg-white/80 text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-300" id="i5vyy" name="Message" placeholder="Please enter query...*" required></textarea>
+                                    </div>
+                                </div>
+                                <button type="submit" class="submit-btn w-full bg-yellow-300 text-blue-800 p-3 sm:p-4 rounded-lg hover:bg-yellow-400 hover:text-blue-900 hover:scale-105 transition-all duration-300 font-semibold shadow-md mt-4 sm:mt-6">Submit</button>
+                                <p class="text-white text-sm mt-4">Disclaimer: By submitting your information, your consent to receive calls,texts, or emails from our real estate team regarding property opportunities, offers, or related services. This consent is not a condition of any purchase.
+Message and data rates may apply. </p>
+                            </div>
+                            <div class="social-media-links mt-4 sm:mt-6 flex justify-center gap-3 sm:gap-4">
+                                <a href="#" id="ix94i-2"><img class="link-img w-8 sm:w-10 h-8 sm:h-10 hover:scale-110 transition-all duration-300" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-twitter.png" alt="Twitter"></a>
+                                <a href="#"><img class="link-img w-8 sm:w-10 h-8 sm:h-10 hover:scale-110 transition-all duration-300" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-facebook.png" alt="Facebook"></a>
+                                <a href="#"><img class="link-img w-8 sm:w-10 h-8 sm:h-10 hover:scale-110 transition-all duration-300" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-google.png" alt="Google"></a>
+                                <a href="#" id="izldf-2"><img class="link-img w-8 sm:w-10 h-8 sm:h-10 hover:scale-110 transition-all duration-300" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-instagram.png" alt="Instagram"></a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center mt-4 sm:mt-6 text-base sm:text-xl text-white font-medium">Or Call Us: <a href="tel:775 990 8015" class="text-yellow-200 hover:text-yellow-300 transition-colors duration-200 font-bold">(775) 990-8015</a></p>
+            <div class="mt-6 sm:mt-10 mx-auto max-w-full sm:max-w-2xl">
+                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1920&auto=format&fit=crop" alt="Contact Visual" class="w-full h-auto rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-blue-700 to-green-700 text-white py-8 sm:py-12 relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-700 to-green-700"></div>
+        <div class="container mx-auto px-4 sm:px-6 text-center relative z-10">
+            <p class="text-sm sm:text-lg">© 2025 All rights reserved.</p>
+            <p class="mt-2 sm:mt-4 text-sm sm:text-lg">Contact: <a href="tel:775 990 8015" class="text-yellow-200 hover:text-yellow-300 transition-colors duration-200">(775) 990-8015</a> | <a href="mailto:info@buyvegashouses.com" class="text-yellow-200 hover:text-yellow-300 transition-colors duration-200">info@buyvegashouses.com</a></p>
+            <p>USA, Nevada, Las Vegas</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        AOS.init({ duration: 1000 });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Contact form submission
+        const contactForm = document.getElementById("contact-us-3-form");
+        if (contactForm && contactForm.tagName === 'FORM') {
+            console.log('Form found: contact-us-3-form', contactForm);
+            contactForm.addEventListener("submit", async function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('Submit event target:', this);
+                try {
+                    const formData = new FormData(contactForm);
+                    const data = Object.fromEntries(formData.entries());
+                    data.form_type = data.form_type || "Contact Us 3 Form";
+                    console.log('Submitting to: /api/submit', 'Data:', data);
+                    const response = await fetch("/api/submit", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Accept": "application/json",
+                        },
+                        body: JSON.stringify(data),
+                        credentials: "same-origin",
+                    });
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status} - ${response.statusText}`);
+                    }
+                    const result = await response.json();
+                    if (result.success) {
+                        console.log('Form submitted successfully:', result);
+                        alert("Form submitted successfully! A confirmation email has been sent.");
+                        contactForm.reset();
+                    } else {
+                        console.error('Server error:', result.message);
+                        alert(`Error: ${result.message || "Unknown server error"}`);
+                    }
+                } catch (err) {
+                    console.error("Submission error:", err);
+                    let errorMessage = "An error occurred while submitting the form. Please try again.";
+                    if (err.message.includes("Failed to fetch")) {
+                        errorMessage = "Unable to connect to the server. Please ensure you are online and try again.";
+                    } else if (err.message.includes("HTTP error")) {
+                        errorMessage = `Server error: ${err.message}`;
+                    }
+                    alert(errorMessage);
+                }
+            });
+        } else {
+            console.warn("Form with ID 'contact-us-3-form' not found or not a form element:", contactForm);
+        }
+    </script>
+</body>
+</html>

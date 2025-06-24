@@ -1,0 +1,24 @@
+{
+  "name": "webuyterms",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "build": "npx tailwindcss -i ./input.css -o ./output.css --minify",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^4.21.1",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^7.2.0",
+    "mongoose": "^8.14.2",
+    "nodemailer": "^6.10.1"
+  },
+  "devDependencies": {
+    "kill-port": "^2.0.1",
+    "tailwindcss": "^3.4.17"
+  }
+}

@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sell your house fast in Las Vegas for cash with Buy Vegas Houses. Get a free cash offer today—no fees, no repairs, close in as little as 7 days.">
+    <meta name="keywords" content="sell house fast, cash for houses, Las Vegas home buyers, Buy Vegas Houses">
+    <meta name="author" content="Buy Vegas Houses">
+    <title>Contact Us | Buy Vegas Houses - Sell Your House Fast for Cash</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="creative-financing.css" />
+    <link href="/output.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS for animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Custom Animations */
+        @keyframes glow {
+            0% { box-shadow: 0 0 10px rgba(255, 204, 0, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(255, 204, 0, 0.8); }
+            100% { box-shadow: 0 0 10px rgba(255, 204, 0, 0.5); }
+        }
+        .glow-effect { animation: glow 2s infinite; }
+        .card-hover:hover { transform: translateY(-10px) scale(1.05); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); }
+        @media (max-width: 640px) {
+            .card-hover:active { transform: translateY(-10px) scale(1.05); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); }
+        }
+        /* Custom Font Styles */
+        body { font-family: 'Poppins', sans-serif; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        nav a, button, .font-semibold { font-family: 'Montserrat', sans-serif; }
+        /* Flip Card Styles */
+        .flip-card {
+            perspective: 1000px;
+            width: 100%;
+            height: 300px;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .flip-card:hover .flip-card-inner, .flip-card:active .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+        .flip-card-front { background-color: #fff; }
+        .flip-card-back { background-color: #fff; transform: rotateY(180deg); }
+        .flip-card img { width: 100%; height: 100%; object-fit: cover; }
+        /* Why Sell to Us Card Styles */
+        .why-card {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+        }
+        .why-card-content {
+            flex: 1;
+            padding-right: 1rem;
+        }
+        .why-card-image {
+            width: 40%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0.5rem;
+        }
+        @media (max-width: 640px) {
+            .why-card { flex-direction: column; text-align: center; }
+            .why-card-image { width: 100%; height: 200px; margin-top: 1rem; }
+        }
+        /* Gorgeous Photo Styling */
+        .gorgeous-photo {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 204, 0, 0.6);
+            border: 4px solid #ffd700;
+            background: linear-gradient(45deg, rgba(255, 215, 0, 0.2), rgba(255, 255, 255, 0.1));
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+        .gorgeous-photo:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 204, 0, 0.8);
+        }
+        .gorgeous-photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 16px;
+        }
+        .gorgeous-photo::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border-radius: 24px;
+            background: radial-gradient(circle, rgba(255, 204, 0, 0.3), transparent);
+            z-index: -1;
+        }
+        /* Creative Financing Card Styles */
+        .creative-card {
+            position: relative;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 204, 0, 0.7);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            overflow: hidden;
+            max-width: 300px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .creative-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 204, 0, 0.2), transparent);
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+        .creative-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 204, 0, 0.6);
+        }
+        .creative-card:hover::before {
+            transform: scale(1.2);
+        }
+        .creative-card h3 {
+            color: #ffd700;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .creative-card p {
+            color: #fff;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+        .creative-card button {
+            background: #ffd700;
+            color: #1e40af;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .creative-card button:hover {
+            background: #fbbf24;
+            transform: scale(1.1);
+        }
+        /* Stunning Section Divider */
+        .section-divider {
+            position: relative;
+            height: 80px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+        .section-divider::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, transparent, #ffd700, transparent);
+            animation: slideGradient 3s infinite linear;
+        }
+        .section-divider::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: url('https://img.icons8.com/ios-filled/50/ffd700/home.png') no-repeat center;
+            background-size: contain;
+            animation: pulseIcon 2s infinite ease-in-out;
+            z-index: 1;
+        }
+        @keyframes slideGradient {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        @keyframes pulseIcon {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        /* Mobile Menu Enhancements */
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+            transform: translateY(-100%);
+        }
+        #mobile-menu.active {
+            transform: translateY(0);
+        }
+        #mobile-menu a {
+            font-size: 1.25rem;
+            padding: 1rem;
+            width: 100%;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        #menu-toggle .close-icon {
+            display: none;
+        }
+        #menu-toggle.active .hamburger-icon {
+            display: none;
+        }
+        #menu-toggle.active .close-icon {
+            display: block;
+        }
+        @media (max-width: 768px) {
+            #mobile-menu {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(to bottom, #1e40af, #047857);
+                z-index: 40;
+                padding-top: 4rem;
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800 bg-gradient-to-br from-blue-700 to-green-700">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full bg-gradient-to-r from-blue-700 to-green-700 shadow-lg z-50">
+        <div class="container mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+            <div class="text-2xl font-extrabold text-white">Buy Vegas Houses</div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-white hover:text-yellow-200 transition-colors">Home</a>
+                <a href="sell.html" class="text-white hover:text-yellow-200 transition-colors">Sell</a>
+                <a href="about.html" class="text-white hover:text-yellow-200 transition-colors">About</a>
+                <a href="contact.html" class="text-white hover:text-yellow-200 transition-colors">Contact</a>
+                <a href="how-it-works.html" class="text-white hover:text-yellow-200 transition-colors">How It Works</a>
+            </nav>
+            <a href="sell.html" class="bg-yellow-300 text-blue-800 px-4 py-2 rounded-full hover:bg-yellow-400 transition">Sell Your Home</a>
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+                <svg class="w-8 h-8 hamburger-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+                <svg class="w-8 h-8 close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-gradient-to-b from-blue-700 to-green-700 shadow-lg">
+            <nav class="flex flex-col items-center py-4 space-y-4">
+                <a href="index.html" class="text-white hover:text-yellow-200 transition-colors">Home</a>
+                <a href="sell.html" class="text-white hover:text-yellow-200 transition-colors">Sell</a>
+                <a href="about.html" class="text-white hover:text-yellow-200 transition-colors">About</a>
+                <a href="contact.html" class="text-white hover:text-yellow-200 transition-colors">Contact</a>
+                <a href="how-it-works.html" class="text-white hover:text-yellow-200 transition-colors">How It Works</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-cover bg-center h-screen" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1920&auto=format&fit=crop');">
+        <div class="absolute inset-0 bg-gradient-to-b from-blue-700/70 to-green-700/70"></div>
+        <div class="container mx-auto px-4 sm:px-6 h-full flex items-center justify-center relative z-10">
+            <div class="text-center text-white">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 drop-shadow-lg animate-fade-in">Creative Solutions for unsold Houses</h1>
+                <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-6 sm:mb-8 font-light tracking-wide drop-shadow-md">No banks No Hassle Just Offers </p>
+                <div class="max-w-sm sm:max-w-md mx-auto bg-white/10 backdrop-blur-md p-6 sm:p-8 rounded-xl shadow-2xl border border-white/30 relative overflow-hidden">
+                    <form id="hero-form" class="relative z-10">
+                        <h2 class="text-xl sm:text-2xl font-semibold text-yellow-200 mb-4 sm:mb-6">Get a no-obligation creative offer</h2>
+                        <input type="text" placeholder="Enter Your Address" class="w-full p-3 sm:p-4 mb-4 border border-white/40 rounded-lg bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-300 transition-all">
+                        <button type="button" onclick="window.location.href='index.html#contact-us'" class="w-full bg-yellow-300 text-blue-800 p-3 sm:p-4 rounded-lg hover:bg-yellow-400 hover:scale-105 transition-all duration-300 font-semibold shadow-md">Submit</button>
+                    </form>
+                    <p class="mt-4 sm:mt-6 text-sm sm:text-lg font-medium">Or Call Us: <a href="tel:775 990 8015" class="text-yellow-200 hover:text-yellow-300 transition-colors duration-200 font-bold">(775) 990 8015</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Creative Financing Solutions Section -->
+    <section id="creative-financing" class="py-16 sm:py-24 bg-gradient-to-br from-blue-700 to-green-700 relative" data-aos="fade-up">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-700 to-green-700"></div>
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-white mb-8 sm:mb-12 text-center drop-shadow-lg">Creative Financing Solutions</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto">
+                <div class="creative-card">
+                    <h3>Seller Financing</h3>
+                    <p>The seller acts as the lender, offering flexible terms to buyers.</p>
+                    <button onclick="window.location.href='how-it-works.html#seller-financing-article'">Learn More</button>
+                </div>
+                <div class="creative-card">
+                    <h3>Subject to Financing</h3>
+                    <p>Take over the existing mortgage without bank approval.</p>
+                    <button onclick="window.location.href='how-it-works.html#subject-to-financing-article'">Learn More</button>
+                </div>
+                <div class="creative-card">
+                    <h3>Lease Option</h3>
+                    <p>Rent now with the option to buy later at a set price.</p>
+                    <button onclick="window.location.href='how-it-works.html#lease-option-article'">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 sm:py-24 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1920&auto=format&fit=crop');" data-aos="fade-up">
+        <div class="absolute inset-0 bg-gradient-to-b from-blue-700/70 to-green-700/70"></div>
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-white mb-6 sm:mb-8 text-center drop-shadow-lg">About Buy Vegas Houses</h2>
+            <p class="text-base sm:text-xl text-white mb-4 text-center max-w-3xl mx-auto font-light tracking-wide bg-white/10 backdrop-blur-md p-4 sm:p-6 rounded-xl shadow-md border border-white/30">To sell your property quickly: Creative financing can make the selling process faster and smoother, allowing you to close
+                the deal without the usual delays.
+                To find a solution if traditional loans aren`t an option: If you`re having trouble qualifying for a mortgage or your buyer is struggling to get financing creative financing can offer a flexible alternative that keeps the deal moving forward.
+                To get the most out of your property without putting up extra cash.
+                Creative financing options can help you sell your property without requiring large upfront payments or costly repairs, making it easier to move on without draining your savings.
+            </p>
+            <div class="text-center my-6">
+                <a href="how-it-works.html#articles" class="inline-block bg-yellow-300 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold shadow-md border border-yellow-400 hover:bg-yellow-400 hover:text-blue-900 hover:scale-105 transition-all duration-300 glow-effect">Learn More</a>
+            </div>
+            <div class="mt-8 mx-auto max-w-full sm:max-w-2xl gorgeous-photo">
+                <img src="foto01.jpg" alt="About Visual">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-16 sm:py-24 bg-gradient-to-br from-blue-700 to-green-700 relative" data-aos="fade-up">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-700 to-green-700"></div>
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-white mb-8 sm:mb-12 text-center drop-shadow-md">How It Works</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-10">
+                <div class="bg-white/20 backdrop-blur-md p-6 sm:p-8 rounded-xl shadow-xl border border-white/40 transform card-hover transition-all duration-300 text-center">
+                    <img src="doraaa.png" alt="Step 1" class="mx-auto mb-4 sm:mb-6 w-12 sm:w-16 h-12 sm:h-16 animate-pulse">
+                    <h3 class="text-xl sm:text-2xl font-semibold text-yellow-200 mb-2 sm:mb-4">Step 1: Contact Us</h3>
+                    <p class="text-white text-sm sm:text-base mb-4">Call or submit your property details to kick off the magic.</p>
+                    <a href="sell.html#sell-your-house" class="inline-block bg-yellow-300 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold shadow-md border border-yellow-400 hover:bg-yellow-400 hover:text-blue-900 hover:scale-105 transition-all duration-300 glow-effect">Start Now</a>
+                </div>
+                <div class="bg-white/20 backdrop-blur-md p-6 sm:p-8 rounded-xl shadow-xl border border-white/40 transform card-hover transition-all duration-300 text-center">
+                    <img src="oferta.png" alt="Step 2" class="mx-auto mb-4 sm:mb-6 w-12 sm:w-16 h-12 sm:h-16 animate-pulse">
+                    <h3 class="text-xl sm:text-2xl font-semibold text-yellow-200 mb-2 sm:mb-4">Step 2: Get Your Offer</h3>
+                    <p class="text-white text-sm sm:text-base mb-4">Receive a sparkling creative offer within 24 hours.</p>
+                    <a href="sell.html#sell-your-house" class="inline-block bg-yellow-300 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold shadow-md border border-yellow-400 hover:bg-yellow-400 hover:text-blue-900 hover:scale-105 transition-all duration-300 glow-effect">Request Offer</a>
+                </div>
+                <div class="bg-white/20 backdrop-blur-md p-6 sm:p-8 rounded-xl shadow-xl border border-white/40 transform card-hover transition-all duration-300 text-center">
+                    <img src="handsshake.png" alt="Step 3" class="mx-auto mb-4 sm:mb-6 w-12 sm:w-16 h-12 sm:h-16 animate-pulse">
+                    <h3 class="text-xl sm:text-2xl font-semibold text-yellow-200 mb-2 sm:mb-4">Step 3: Close the Deal</h3>
+                    <p class="text-white text-sm sm:text-base mb-4">Close on your timeline—fast as 14 days!</p>
+                    <a href="sell.html#sell-your-house" class="inline-block bg-yellow-300 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold shadow-md border border-yellow-400 hover:bg-yellow-400 hover:text-blue-900 hover:scale-105 transition-all duration-300 glow-effect">Close Fast</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Comparison Section -->
+    <section class="py-16 sm:py-24 bg-gradient-to-tr from-green-700 to-blue-700 relative" data-aos="fade-up">
+        <div class="absolute inset-0 bg-gradient-to-tr from-green-700 to-blue-700"></div>
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-white mb-8 sm:mb-12 text-center drop-shadow-lg">Why Sell to Us?</h2>
+            <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-6 sm:gap-8">
+                <div class="w-full sm:w-1/2 bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/40 card-hover transition-all duration-300 why-card">
+                    <div class="why-card-content">
+                        <h3 class="text-2xl sm:text-3xl font-semibold text-yellow-200 mb-4 sm:mb-6 text-center">Traditional Sale</h3>
+                        <ul class="list-disc pl-6 text-white text-sm sm:text-lg leading-relaxed">
+                            <li>Long wait (6-9 months)</li>
+                            <li>Commission fees</li>
+                            <li>Repairs & staging required</li>
+                            <li>Uncertain outcome</li>
+                        </ul>
+                        <div class="text-center mt-4">
+                            <a href="how-it-works.html#articles" class="inline-block bg-yellow-300 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold shadow-md border border-yellow-400 hover:bg-yellow-400 hover:text-blue-900 hover:scale-105 transition-all duration-300 glow-effect">Learn Why</a>
+                        </div>
+                    </div>
+                    <img src="https://www.trulia.com/pictures/thumbs_4/zillowstatic/fp/c59f5130be44e699455cdb192869d96c-full.jpg" alt="Traditional Sale" class="why-card-image">
+                </div>
+                <div class="w-full sm:w-1/2 bg-gradient-to-br from-yellow-300/20 to-yellow-200/10 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/40 card-hover transition-all duration-300 why-card">
+                    <div class="why-card-content">
+                        <h3 class="text-2xl sm:text-3xl font-semibold text-yellow-200 mb-4 sm:mb-6 text-center">Sell to Us</h3>
+                        <ul class="list-disc pl-6 text-white text-sm sm:text-lg leading-relaxed">
+                            <li>Fast closing (14 days)</li>
+                            <li>No fees or commissions</li>
+                            <li>Sell as-is, no repairs</li>
+                        </ul>
+                        <div class="text-center mt-4">
+                            <a href="how-it-works.html#articles" class="inline-block bg-yellow-300 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold shadow-md border border-yellow-400 hover:bg-yellow-400 hover:text-blue-900 hover:scale-105 transition-all duration-300 glow-effect">Sell Now</a>
+                        </div>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=1920&auto=format&fit=crop" alt="Sell to Us" class="why-card-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Why Choose Us Section -->
+    <section id="sell-your-house" class="py-16 sm:py-24 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1920&auto=format&fit=crop');" data-aos="fade-up">
+        <div class="absolute inset-0 bg-gradient-to-b from-blue-700/70 to-green-700/70"></div>
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-white mb-8 sm:mb-12 text-center drop-shadow-lg">Why Choose Buy Vegas Houses?</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-10">
+                <div class="bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-lg p-6 sm:p-8 rounded-2xl shadow-2xl border border-white/40 card-hover transition-all duration-300 text-center">
+                    <h3 class="text-xl sm:text-2xl font-semibold text-yellow-200 mb-2 sm:mb-4">Subject to Financing</h3>
+                    <p class="text-white text-sm sm:text-base mb-4">A buyer takes over the seller`s existing mortgage,payments, potentially without needing to qualify for a new loan.</p>
+                    <a href="how-it-works.html#articles" class="inline-block bg-yellow-300 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold shadow-md border border-yellow-400 hover:bg-yellow-400 hover:text-blue-900 hover:scale-105 transition-all duration-300 glow-effect">Learn More</a>
+                </div>
+                <div class="bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-lg p-6 sm:p-8 rounded-2xl shadow-2xl border border-white/40 card-hover transition-all duration-300 text-center">
+                    <h3 class="text-xl sm:text-2xl font-semibold text-yellow-200 mb-2 sm:mb-4">Seller Financing</h3>
+                    <p class="text-white text-sm sm:text-base mb-4">The seller provides financing to the buyer ,rather than the buyer obtaining a loan from a bank</p>
+                    <a href="how-it-works.html#articles" class="inline-block bg-yellow-300 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold shadow-md border border-yellow-400 hover:bg-yellow-400 hover:text-blue-900 hover:scale-105 transition-all duration-300 glow-effect">Learn More</a>
+                </div>
+                <div class="bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-lg p-6 sm:p-8 rounded-2xl shadow-2xl border border-white/40 card-hover transition-all duration-300 text-center">
+                    <h3 class="text-xl sm:text-2xl font-semibold text-yellow-200 mb-2 sm:mb-4">Lease Option Agreements</h3>
+                    <p class="text-white text-sm sm:text-base mb-4">The buyer leases the property with an option to purchase it at later date often at a predetermined price</p>
+                    <a href="how-it-works.html#articles" class="inline-block bg-yellow-300 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold shadow-md border border-yellow-400 hover:bg-yellow-400 hover:text-blue-900 hover:scale-105 transition-all duration-300 glow-effect">Learn More</a>
+                </div>
+            </div>
+            <div class="mt-6 sm:mt-10 mx-auto why-choose-photo w-full sm:w-96">
+                <img src="qika.jpg" alt="Why Choose Us Visual">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Testimonials Section (Enhanced Design) -->
+    <section id="reviews" class="py-24 bg-gradient-to-br from-blue-700 to-green-700 relative" data-aos="fade-up">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-700 to-green-700"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-5xl font-extrabold text-white mb-12 text-center drop-shadow-md">Reviews</h2>
+            <p class="text-xl text-white mb-8 text-center font-light bg-white/10 backdrop-blur-md p-4 rounded-lg shadow-md border border-white/40">Proud of our BBB A+ Rating and stellar Google reviews.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-2xl border border-yellow-200/50 glow-effect card-hover transition-all duration-300">
+                    <img src="111.jpg" alt="Client 1" class="w-full h-48 object-cover rounded-t-2xl mb-6">
+                    <p class="text-white mb-4 text-center">"Great solution!"</p>
+                    <div class="text-center text-yellow-200 mb-2">
+                        <span class="text-sm">★★★★★</span>
+                    </div>
+                    <div class="text-center text-sm text-yellow-200 font-semibold">— John D.</div>
+                </div>
+                <div class="bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-2xl border border-yellow-200/50 glow-effect card-hover transition-all duration-300">
+                    <img src="sss.jpg" alt="Client 2" class="w-full h-48 object-cover rounded-t-2xl mb-6">
+                    <p class="text-white mb-4 text-center">"No repairs, closed in a week—pure magic!"</p>
+                    <div class="text-center text-yellow-200 mb-2">
+                        <span class="text-sm">★★★★★</span>
+                    </div>
+                    <div class="text-center text-sm text-yellow-200 font-semibold">— Sarah M.</div>
+                </div>
+                <div class="bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-2xl border border-yellow-200/50 glow-effect card-hover transition-all duration-300">
+                    <img src="aaaa.jpg" alt="Client 3" class="w-full h-48 object-cover rounded-t-2xl mb-6">
+                    <p class="text-white mb-4 text-center">"Best creative financing offer in town—highly recommend!"</p>
+                    <div class="text-center text-yellow-200 mb-2">
+                        <span class="text-sm">★★★★★</span>
+                    </div>
+                    <div class="text-center text-sm text-yellow-200 font-semibold">— Mike R.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Locations Section -->
+    <section class="py-16 sm:py-24 bg-gradient-to-tr from-green-700 to-blue-700 relative" data-aos="fade-up">
+        <div class="absolute inset-0 bg-gradient-to-tr from-green-700 to-blue-700"></div>
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-white mb-8 sm:mb-12 text-center drop-shadow-lg">Where We Buy Houses</h2>
+            <p class="text-base sm:text-xl text-white mb-6 sm:mb-8 text-center font-light bg-white/10 backdrop-blur-md p-4 rounded-lg shadow-md border border-white/40">We buy houses across all Las Vegas hotspots, including:</p>
+            <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6 max-w-3xl mx-auto text-white text-center">
+                <li class="bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-lg p-4 sm:p-6 rounded-2xl shadow-2xl border border-white/40 card-hover transition-all duration-300">
+                    Downtown Las Vegas
+                    <div class="mt-2">
+                        <a href="sell.html#sell-your-house" class="inline-block bg-yellow-300 text-blue-800 px-3 py-1 rounded-full text-xs sm:text-sm font-semibold shadow-md border border-yellow-400 hover:bg-yellow-400 hover:text-blue-900 hover:scale-105 transition-all duration-300 glow-effect">Sell Here</a>
+                    </div>
+                </li>
+                <li class="bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-lg p-4 sm:p-6 rounded-2xl shadow-2xl border border-white/40 card-hover transition-all duration-300">
+                    Summerlin
+                    <div class="mt-2">
+                        <a href="sell.html#sell-your-house" class="inline-block bg-yellow-300 text-blue-800 px-3 py-1 rounded-full text-xs sm:text-sm font-semibold shadow-md border border-yellow-400 hover:bg-yellow-400 hover:text-blue-900 hover:scale-105 transition-all duration-300 glow-effect">Sell Here</a>
+                    </div>
+                </li>
+                <li class="bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-lg p-4 sm:p-6 rounded-2xl shadow-2xl border border-white/40 card-hover transition-all duration-300">
+                    Henderson
+                    <div class="mt-2">
+                        <a href="sell.html#sell-your-house" class="inline-block bg-yellow-300 text-blue-800 px-3 py-1 rounded-full text-xs sm:text-sm font-semibold shadow-md border border-yellow-400 hover:bg-yellow-400 hover:text-blue-900 hover:scale-105 transition-all duration-300 glow-effect">Sell Here</a>
+                    </div>
+                </li>
+                <li class="bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-lg p-4 sm:p-6 rounded-2xl shadow-2xl border border-white/40 card-hover transition-all duration-300">
+                    North Las Vegas
+                    <div class="mt-2">
+                        <a href="sell.html#sell-your-house" class="inline-block bg-yellow-300 text-blue-800 px-3 py-1 rounded-full text-xs sm:text-sm font-semibold shadow-md border border-yellow-400 hover:bg-yellow-400 hover:text-blue-900 hover:scale-105 transition-all duration-300 glow-effect">Sell Here</a>
+                    </div>
+                </li>
+                <li class="bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-lg p-4 sm:p-6 rounded-2xl shadow-2xl border border-white/40 card-hover transition-all duration-300">
+                    Paradise
+                    <div class="mt-2">
+                        <a href="sell.html#sell-your-house" class="inline-block bg-yellow-300 text-blue-800 px-3 py-1 rounded-full text-xs sm:text-sm font-semibold shadow-md border border-yellow-400 hover:bg-yellow-400 hover:text-blue-900 hover:scale-105 transition-all duration-300 glow-effect">Sell Here</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="mt-6 sm:mt-10 mx-auto max-w-full sm:max-w-3xl">
+                <img src="map22.png" alt="Locations Visual" class="w-full h-auto rounded-lg shadow-2xl transform hover:scale-105 transition-all duration-300">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Buy Vegas Houses Section (Flip Cards) -->
+    <section class="py-16 sm:py-24 bg-gradient-to-br from-blue-700 to-green-700 relative" data-aos="fade-up">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-700 to-green-700"></div>
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-white mb-8 sm:mb-12 text-center drop-shadow-lg">Buy Vegas Houses</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-10">
+                <div>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://media.istockphoto.com/id/1436217023/photo/exterior-of-a-blue-suburban-home.jpg?s=612x612&w=0&k=20&c=6n08rcEdza9Vehf5cHzk1uS0UKAN0qr3o884mbDvD5o=" alt="House 1 Front">
+                            </div>
+                            <div class="flip-card-back">
+                                <img src="https://media.istockphoto.com/id/1211174464/photo/beautiful-residential-home-exterior-on-bright-sunny-day-with-green-grass-and-blue-sky.jpg?s=612x612&w=0&k=20&c=h0XtWGD8asz_hfDVus7SWwOrtAFlZYfr7wdStKCQv14=" alt="House 1 Back">
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-white text-base sm:text-lg font-semibold text-center mt-4">Single Family Home</p>
+                    <div class="text-center mt-2">
+                        <a href="sell.html#sell-your-house" class="inline-block bg-yellow-300 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold shadow-md border border-yellow-400 hover:bg-yellow-400 hover:text-blue-900 hover:scale-105 transition-all duration-300 glow-effect">Sell Single Family House</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://www.centurycommunities.com/globalassets/century/assets/elevations--amenities/ccs/ccs-nv/marvella/2114/2114-southern-italian.jpg?width=960&height=0&rmode=crop&rsampler=bicubic&compand=true&v=972" alt="House 2 Front">
+                            </div>
+                            <div class="flip-card-back">
+                                <img src="https://photos.zillowstatic.com/fp/be0a710a3e63cb7b5172c576761d39c8-p_e.jpg" alt="House 2 Back">
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-white text-base sm:text-lg font-semibold text-center mt-4">Single Family House</p>
+                    <div class="text-center mt-2">
+                        <a href="sell.html#sell-your-house" class="inline-block bg-yellow-300 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold shadow-md border border-yellow-400 hover:bg-yellow-400 hover:text-blue-900 hover:scale-105 transition-all duration-300 glow-effect">Sell Single Family Home</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://images1.apartments.com/i2/zYqnMgGpQw1TZBiWVaINkYD_oa7sybjOSoYaIRdWbl8/117/1026-cliffbrook-hedge-ave-north-las-vegas-nv-building-photo.jpg?p=1" alt="House 3 Front">
+                            </div>
+                            <div class="flip-card-back">
+                                <img src="https://ssl.cdn-redfin.com/photo/95/islphoto/044/genIslnoResize.2670044_1.jpg" alt="House 3 Back">
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-white text-base sm:text-lg font-semibold text-center mt-4">Multi Family Home</p>
+                    <div class="text-center mt-2">
+                        <a href="sell.html#sell-your-house" class="inline-block bg-yellow-300 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold shadow-md border border-yellow-400 hover:bg-yellow-400 hover:text-blue-900 hover:scale-105 transition-all duration-300 glow-effect">Sell Multi Family Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 sm:py-24 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1920&auto=format&fit=crop');" data-aos="fade-up">
+        <div class="absolute inset-0 bg-gradient-to-b from-green-700/70 to-blue-700/70"></div>
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-white mb-8 sm:mb-12 text-center drop-shadow-lg">Frequently Asked Questions</h2>
+            <div class="space-y-4 sm:space-y-6 max-w-3xl mx-auto">
+                <details class="bg-white/10 backdrop-blur-md p-4 sm:p-6 rounded-xl shadow-2xl border border-white/40">
+                    <summary class="text-white font-semibold cursor-pointer text-base sm:text-lg">How fast can you close?</summary>
+                    <p class="text-white mt-4 text-sm sm:text-base">As little as 14 days! Call <a href="tel:775 990 8015" class="text-yellow-200 hover:text-yellow-300">(775) 990-8015</a> for more.</p>
+                </details>
+                <details class="bg-white/10 backdrop-blur-md p-4 sm:p-6 rounded-xl shadow-2xl border border-white/40">
+                    <summary class="text-white font-semibold cursor-pointer text-base sm:text-lg">Do I need to make any repairs?</summary>
+                    <p class="text-white mt-4 text-sm sm:text-base">No, we buy houses as-is—save time and money!</p>
+                </details>
+                <details class="bg-white/10 backdrop-blur-md p-4 sm:p-6 rounded-xl shadow-2xl border border-white/40">
+                    <summary class="text-white font-semibold cursor-pointer text-base sm:text-lg">Are there any fees?</summary>
+                    <p class="text-white mt-4 text-sm sm:text-base">Zero fees or commissions—we cover it all.</p>
+                </details>
+            </div>
+            <div class="mt-6 sm:mt-10 mx-auto max-w-full sm:max-w-2xl">
+                <img src="web1.png" alt="FAQ Visual" class="w-full h-auto rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Contact Section -->
+    <section id="contact-us" class="py-16 sm:py-24 bg-gradient-to-br from-blue-700 to-green-700 relative" data-aos="fade-up">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-700 to-green-700"></div>
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-white mb-8 sm:mb-12 text-center drop-shadow-md">Get Your Free Offer Now</h2>
+            <div class="contact_us">
+                <div class="responsive-container-block big-container">
+                    <div class="blueBG"></div>
+                    <div class="responsive-container-block container">
+                        <form id="contact-form" class="form-box bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-lg p-6 sm:p-8 rounded-2xl shadow-2xl border border-white/40" novalidate>
+                            <input type="hidden" name="form_type" value="Contact Form">
+                            <div class="container-block form-wrapper">
+                                <p class="text-blk contactus-head text-2xl sm:text-3xl font-semibold text-yellow-200 mb-4">Get in Touch</p>
+                                <p class="text-blk contactus-subhead text-white text-sm sm:text-base mb-4 sm:mb-6">Contact us for a free creative offer today!</p>
+                                <div class="responsive-container-block grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                                    <div class="responsive-cell-block">
+                                        <p class="text-blk input-title text-white text-sm sm:text-base">FIRST NAME</p>
+                                        <input class="input w-full p-3 sm:p-4 rounded-lg bg-white/80 text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-300" id="first-name" name="FirstName" placeholder="Please enter first name...*" required>
+                                    </div>
+                                    <div class="responsive-cell-block">
+                                        <p class="text-blk input-title text-white text-sm sm:text-base">LAST NAME</p>
+                                        <input class="input w-full p-3 sm:p-4 rounded-lg bg-white/80 text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-300" id="last-name" name="LastName" placeholder="Please enter last name...*" required>
+                                    </div>
+                                    <div class="responsive-cell-block">
+                                        <p class="text-blk input-title text-white text-sm sm:text-base">EMAIL</p>
+                                        <input class="input w-full p-3 sm:p-4 rounded-lg bg-white/80 text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-300" id="email" name="Email" type="email" placeholder="Please enter email...*" required>
+                                    </div>
+                                    <div class="responsive-cell-block">
+                                        <p class="text-blk input-title text-white text-sm sm:text-base">PHONE NUMBER</p>
+                                        <input class="input w-full p-3 sm:p-4 rounded-lg bg-white/80 text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-300" id="phone" name="PhoneNumber" type="tel" placeholder="Please enter phone number...*" required>
+                                    </div>
+                                    <div class="responsive-cell-block col-span-1 sm:col-span-2">
+                                        <p class="text-blk input-title text-white text-sm sm:text-base">WHAT DO YOU HAVE IN MIND</p>
+                                        <textarea class="textinput w-full p-3 sm:p-4 rounded-lg bg-white/80 text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-300" id="message" name="Message" placeholder="Please enter query...*" required></textarea>
+                                    </div>
+                                </div>
+                                <button type="submit" class="submit-btn w-full bg-yellow-300 text-blue-800 p-3 sm:p-4 rounded-lg hover:bg-yellow-400 hover:text-blue-900 hover:scale-105 transition-all duration-300 font-semibold shadow-md mt-4 sm:mt-6">Submit</button>
+                                <p class="text-white text-sm mt-4">Disclaimer: By submitting your information, your consent to receive calls,texts, or emails from our real estate team regarding property opportunities, offers, or related services. This consent is not a condition of any purchase.
+Message and data rates may apply. </p>
+                            </div>
+                            <div class="social-media-links mt-4 sm:mt-6 flex justify-center gap-3 sm:gap-4">
+                                <a href="#" id="twitter"><img class="link-img w-8 sm:w-10 h-8 sm:h-10 hover:scale-110 transition-all duration-300" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-twitter.png" alt="Twitter"></a>
+                                <a href="#"><img class="link-img w-8 sm:w-10 h-8 sm:h-10 hover:scale-110 transition-all duration-300" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-facebook.png" alt="Facebook"></a>
+                                <a href="#"><img class="link-img w-8 sm:w-10 h-8 sm:h-10 hover:scale-110 transition-all duration-300" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-google.png" alt="Google"></a>
+                                <a href="#" id="instagram"><img class="link-img w-8 sm:w-10 h-8 sm:h-10 hover:scale-110 transition-all duration-300" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-instagram.png" alt="Instagram"></a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center mt-4 sm:mt-6 text-base sm:text-xl text-white font-medium">Or Call Us: <a href="tel:775 990 8015" class="text-yellow-200 hover:text-yellow-300 transition-colors duration-200 font-bold">(775) 990-8015</a></p>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-blue-700 to-green-700 text-white py-8 sm:py-12 relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-700 to-green-700"></div>
+        <div class="container mx-auto px-4 sm:px-6 text-center relative z-10">
+            <p class="text-sm sm:text-lg">© 2025 All rights reserved.</p>
+            <p class="mt-2 sm:mt-4 text-sm sm:text-lg">Contact: <a href="tel:775 990 8015" class="text-yellow-200 hover:text-yellow-300 transition-colors duration-200">(775) 990-8015</a> | <a href="mailto:info@buysvegashouses.com" class="text-yellow-200 hover:text-yellow-300 transition-colors duration-200">info@webuyhousesinvegas.com</a></p>
+            <p> Usa Nevada Las Vegas </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        AOS.init({ duration: 1000 });
+
+        // Mobile Menu Toggle
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuToggle = document.getElementById("menu-toggle");
+            const mobileMenu = document.getElementById("mobile-menu");
+
+            menuToggle.addEventListener("click", function() {
+                mobileMenu.classList.toggle("hidden");
+                mobileMenu.classList.toggle("active");
+                menuToggle.classList.toggle("active");
+            });
+
+            document.querySelectorAll("#mobile-menu a").forEach(link => {
+                link.addEventListener("click", () => {
+                    mobileMenu.classList.add("hidden");
+                    mobileMenu.classList.remove("active");
+                    menuToggle.classList.remove("active");
+                });
+            });
+        });
+
+        // Contact Form Submission
+        document.addEventListener("DOMContentLoaded", function() {
+            const contactForm = document.getElementById("contact-form");
+            if (contactForm && contactForm.tagName === 'FORM') {
+                console.log('Form found: contact-form', contactForm);
+                contactForm.addEventListener("submit", async function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log('Submit event target:', this);
+                    try {
+                        const formData = new FormData(contactForm);
+                        const data = Object.fromEntries(formData.entries());
+                        data.form_type = data.form_type || "Contact Form";
+                        console.log('Submitting to: /api/submit', 'Data:', data);
+                        const response = await fetch("/api/submit", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                                "Accept": "application/json",
+                            },
+                            body: JSON.stringify(data),
+                            credentials: "same-origin",
+                        });
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! Status: ${response.status} - ${response.statusText}`);
+                        }
+                        const result = await response.json();
+                        if (result.success) {
+                            console.log('Form submitted successfully:', result);
+                            alert("Form submitted successfully! A confirmation email has been sent.");
+                            contactForm.reset();
+                        } else {
+                            console.error('Server error:', result.message);
+                            alert(`Error: ${result.message || "Unknown server error"}`);
+                        }
+                    } catch (err) {
+                        console.error("Submission error:", err);
+                        let errorMessage = "An error occurred while submitting the form. Please try again.";
+                        if (err.message.includes("Failed to fetch")) {
+                            errorMessage = "Unable to connect to the server. Please ensure you are online and try again.";
+                        } else if (err.message.includes("HTTP error")) {
+                            errorMessage = `Server error: ${err.message}`;
+                        }
+                        alert(errorMessage);
+                    }
+                });
+            } else {
+                console.warn("Form with ID 'contact-form' not found or not a form element:", contactForm);
+            }
+        });
+    </script>
+</body>
+</html>

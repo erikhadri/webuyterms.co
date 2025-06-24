@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sell your house fast in Las Vegas with Buy Vegas Houses. Get a free creative offer today—no fees, no repairs, close in as little as 14 days.">
+    <meta name="keywords" content="sell house fast, cash for houses, Las Vegas home buyers, Buy Vegas Houses">
+    <meta name="author" content="Buy Vegas Houses">
+    <title>Buy Vegas Houses | Sell Your House Fast in Las Vegas</title>
+    <link rel="stylesheet" media="screen" href="/styles.css" />
+    <link href="/output.css" rel="stylesheet">
+    <style>
+        .stepper { list-style: none; padding: 0; }
+        .stepper li { display: flex; align-items: center; margin-bottom: 1rem; }
+        .step--count { background: #facc15; color: #1e3a8a; width: 2rem; height: 2rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; font-weight: bold; }
+        .form-control { width: 100%; padding: 0.75rem; border-radius: 0.5rem; border: 1px solid #e5e7eb; margin-bottom: 1rem; }
+        .btn-primary { background: #facc15; color: #1e3a8a; padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: bold; transition: all 0.3s; }
+        .btn-primary:hover { background: #eab308; transform: scale(1.05); }
+        /* Section Divider */
+        .section-divider {
+            position: relative;
+            height: 80px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+        .section-divider::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, transparent, #ffd700, transparent);
+            animation: slideGradient 3s infinite linear;
+        }
+        .section-divider::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: url('https://img.icons8.com/ios-filled/50/ffd700/home.png') no-repeat center;
+            background-size: contain;
+            animation: pulseIcon 2s infinite ease-in-out;
+            z-index: 1;
+        }
+        @keyframes slideGradient {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        @keyframes pulseIcon {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        /* Flip Card Styles */
+        .flip-card {
+            perspective: 1000px;
+            width: 100%;
+            height: 300px;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .flip-card:hover .flip-card-inner, .flip-card:active .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+        .flip-card-front { background-color: #fff; }
+        .flip-card-back { background-color: #fff; transform: rotateY(180deg); }
+        .flip-card img { width: 100%; height: 100%; object-fit: cover; }
+        /* Card Styling */
+        .contact-card-1, .contact-card-2 {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(12px);
+            border: 3px solid rgba(255, 204, 0, 0.7);
+            border-radius: 25px;
+            padding: 2.5rem;
+            transition: box-shadow 0.3s ease;
+        }
+        .contact-card-1:hover, .contact-card-2:hover {
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+        }
+        .card-image {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border: 2px solid #ffd700;
+        }
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 13px;
+        }
+        /* Animations */
+        .glow-effect {
+            animation: glow 2s infinite;
+        }
+        @keyframes glow {
+            0% { box-shadow: 0 0 10px rgba(255, 204, 0, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(255, 204, 0, 0.8); }
+            100% { box-shadow: 0 0 10px rgba(255, 204, 0, 0.5); }
+        }
+        /* Mobile Responsiveness */
+        @media (max-width: 640px) {
+            .h-screen { height: auto; min-height: 100vh; }
+            .text-4xl { font-size: 2rem; }
+            .text-5xl { font-size: 2.5rem; }
+            .text-6xl { font-size: 3rem; }
+            .text-7xl { font-size: 3.5rem; }
+            .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+            .contact-card-1, .contact-card-2 { padding: 1.5rem; }
+            .card-image { height: 100%; }
+            .flip-card { height: 250px; }
+        }
+        /* Mobile Menu Enhancements */
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+            transform: translateY(-100%);
+            top: 80px; /* Adjust based on header height */
+        }
+        #mobile-menu.active {
+            transform: translateY(0);
+        }
+        #mobile-menu a {
+            font-size: 1.25rem;
+            padding: 1rem;
+            width: 100%;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        #menu-toggle .close-icon {
+            display: none;
+        }
+        #menu-toggle.active .hamburger-icon {
+            display: none;
+        }
+        #menu-toggle.active .close-icon {
+            display: block;
+        }
+        @media (max-width: 768px) {
+            #mobile-menu {
+                position: fixed;
+                left: 0;
+                width: 100%;
+                height: calc(100% - 80px); /* Adjust based on header height */
+                background: linear-gradient(to bottom, #1e40af, #047857);
+                z-index: 40;
+                padding-top: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gradient-to-br from-blue-700 to-green-700">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full bg-gradient-to-r from-blue-700 to-green-700 shadow-lg z-50">
+        <div class="container mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+            <div class="text-2xl font-extrabold text-white">Buy Vegas Houses</div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-white hover:text-yellow-200 transition-colors">Home</a>
+                <a href="sell.html" class="text-white hover:text-yellow-200 transition-colors">Sell</a>
+                <a href="about.html" class="text-white hover:text-yellow-200 transition-colors">About</a>
+                <a href="contact.html" class="text-white hover:text-yellow-200 transition-colors">Contact</a>
+                <a href="how-it-works.html" class="text-white hover:text-yellow-200 transition-colors">How It Works</a>
+            </nav>
+            <a href="sell.html" class="bg-yellow-300 text-blue-800 px-4 py-2 rounded-full hover:bg-yellow-400 transition">Sell Your Home</a>
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+                <svg class="w-8 h-8 hamburger-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+                <svg class="w-8 h-8 close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-gradient-to-b from-blue-700 to-green-700 shadow-lg absolute w-full">
+            <nav class="flex flex-col items-center py-4 space-y-4">
+                <a href="index.html" class="text-white hover:text-yellow-200 transition-colors">Home</a>
+                <a href="sell.html" class="text-white hover:text-yellow-200 transition-colors">Sell</a>
+                <a href="about.html" class="text-white hover:text-yellow-200 transition-colors">About</a>
+                <a href="contact.html" class="text-white hover:text-yellow-200 transition-colors">Contact</a>
+                <a href="how-it-works.html" class="text-white hover:text-yellow-200 transition-colors">How It Works</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-cover bg-center h-screen" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1920&auto=format&fit=crop');">
+        <div class="absolute inset-0 bg-gradient-to-b from-blue-700/70 to-green-700/70"></div>
+        <div class="container mx-auto px-6 h-full flex items-center justify-center relative z-10">
+            <div class="text-center text-white">
+                <h1 class="text-5xl md:text-7xl font-extrabold mb-6 drop-shadow-lg animate-fade-in">Sell Your House Fast</h1>
+                <p class="text-xl md:text-3xl mb-8 font-light tracking-wide drop-shadow-md">Tell us about your property for a no-obligation creative offer!</p>
+                <div class="max-w-md mx-auto bg-white/10 backdrop-blur-md p-8 rounded-xl shadow-2xl border border-white/30 relative overflow-hidden">
+                    <form id="hero-form" class="relative z-10 form-inline">
+                        <h2 class="text-2xl font-semibold text-yellow-200 mb-6">Have a House to Sell?</h2>
+                        <input type="text" name="zipcode" id="zipcode" maxlength="10" required="required" placeholder="Enter Address:" pattern="[0-9]{5+}" class="w-full p-4 mb-4 border border-white/40 rounded-lg bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-300 transition-all">
+                        <button type="submit" onclick="window.location.href='sell.html#sell-your-house'" class="w-full bg-yellow-300 text-blue-800 p-4 rounded-lg hover:bg-yellow-400 hover:scale-105 transition-all duration-300 font-semibold shadow-md">Get Offer</button>
+                    </form>
+                    <p class="mt-6 text-lg font-medium">Or Call Us: <a href="tel:775 990 8015" class="text-yellow-200 hover:text-yellow-300 transition-colors duration-200 font-bold">(775) 990-8015
+                    </a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-24 bg-gradient-to-br from-blue-700 to-green-700 relative" data-aos="fade-up">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-700 to-green-700"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-5xl font-extrabold text-white mb-12 text-center drop-shadow-md">How It Works</h2>
+            <div class="bg-white/20 backdrop-blur-md p-8 rounded-xl shadow-xl border border-white/40 max-w-2xl mx-auto">
+                <ul class="stepper text-white">
+                    <li><span class="step--count">1</span><div class="steper--data"><p class="m-0">Enter your basic property information.</p></div></li>
+                    <li><span class="step--count">2</span><div class="steper--data"><p class="m-0">We'll arrange a time to view your home.</p></div></li>
+                    <li><span class="step--count">3</span><div class="steper--data"><p class="m-0">Get a no-obligation, creative offer. No repairs needed.</p></div></li>
+                    <li><span class="step--count">4</span><div class="steper--data"><p class="m-0">If you accept - we'll buy your house quickly and hassle-free.</p></div></li>
+                </ul>
+                <a href="index.html#about" class="btn btn-primary btn-md mt-4 block text-center">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Sell Your House Section -->
+    <section id="sell-your-house" class="py-24 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1920&auto=format&fit=crop');" data-aos="fade-up">
+        <div class="absolute inset-0 bg-gradient-to-b from-blue-700/70 to-green-700/70"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-5xl font-extrabold text-white mb-12 text-center drop-shadow-lg">Sell Your House Fast</h2>
+            <p class="text-xl text-white mb-8 text-center font-light bg-white/10 backdrop-blur-md p-4 rounded-lg shadow-md border border-white/40">
+                We'll connect you with a local real estate professional to buy your home quickly and hassle-free. You could have your house sold in days, regardless of the condition or your financial situation. We'll send our investor to come view your home, and give you a no-obligation creative offer.
+            </p>
+            <form class="bg-white/20 backdrop-blur-md p-8 rounded-xl shadow-xl border border-white/40 max-w-4xl mx-auto" id="sell-your-house-form" novalidate>
+                <input type="hidden" name="form_type" value="Sell Your House">
+                <h1 class="text-3xl font-semibold text-yellow-200 mb-6">Basic Home Information</h1>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <input type="text" name="seller_f_name" id="lead_seller_f_name" maxlength="255" required="required" placeholder="First Name*" class="form-control w-full p-3 rounded-lg bg-blue-300 text-black placeholder-gray-700 focus:ring-2 focus:ring-yellow-300" />
+                    <input type="text" name="seller_l_name" id="lead_seller_l_name" maxlength="255" required="required" placeholder="Last Name*" class="form-control w-full p-3 rounded-lg bg-blue-300 text-black placeholder-gray-700 focus:ring-2 focus:ring-yellow-300" />
+                    <input type="email" name="seller_email" id="lead_seller_email" maxlength="255" required="required" placeholder="Email Address*" class="form-control w-full p-3 rounded-lg bg-blue-300 text-black placeholder-gray-700 focus:ring-2 focus:ring-yellow-300" />
+                    <input type="text" name="seller_phone" id="lead_seller_phone" maxlength="255" placeholder="Phone Number*" class="form-control w-full p-3 rounded-lg bg-blue-300 text-black placeholder-gray-700 focus:ring-2 focus:ring-yellow-300" />
+                    <input type="text" name="house_street_address" id="lead_house_street_address" maxlength="255" required="required" placeholder="Address*" class="form-control w-full p-3 rounded-lg bg-blue-300 text-black placeholder-gray-700 focus:ring-2 focus:ring-yellow-300" />
+                    <input type="text" name="house_city" id="lead_house_city" maxlength="255" required="required" placeholder="City*" class="form-control w-full p-3 rounded-lg bg-blue-300 text-black placeholder-gray-700 focus:ring-2 focus:ring-yellow-300" />
+                    <select class="form-control w-full p-3 rounded-lg bg-blue-300 text-black focus:ring-2 focus:ring-yellow-300" name="house_state" id="lead_house_state" required="required">
+                        <option value="">State*</option>
+                        <option value="AL">Alabama</option><option value="AK">Alaska</option><option value="AZ">Arizona</option><option value="AR">Arkansas</option><option value="CA">California</option><option value="CO">Colorado</option><option value="CT">Connecticut</option><option value="DE">Delaware</option><option value="DC">District of Columbia</option><option value="FL">Florida</option><option value="GA">Georgia</option><option value="HI">Hawaii</option><option value="ID">Idaho</option><option value="IL">Illinois</option><option value="IN">Indiana</option><option value="IA">Iowa</option><option value="KS">Kansas</option><option value="KY">Kentucky</option><option value="LA">Louisiana</option><option value="ME">Maine</option><option value="MD">Maryland</option><option value="MA">Massachusetts</option><option value="MI">Michigan</option><option value="MN">Minnesota</option><option value="MS">Mississippi</option><option value="MO">Missouri</option><option value="MT">Montana</option><option value="NE">Nebraska</option><option value="NV">Nevada</option><option value="NH">New Hampshire</option><option value="NJ">New Jersey</option><option value="NM">New Mexico</option><option value="NY">New York</option><option value="NC">North Carolina</option><option value="ND">North Dakota</option><option value="OH">Ohio</option><option value="OK">Oklahoma</option><option value="OR">Oregon</option><option value="PA">Pennsylvania</option><option value="RI">Rhode Island</option><option value="SC">South Carolina</option><option value="SD">South Dakota</option><option value="TN">Tennessee</option><option value="TX">Texas</option><option value="UT">Utah</option><option value="VT">Vermont</option><option value="VA">Virginia</option><option value="WA">Washington</option><option value="WV">West Virginia</option><option value="WI">Wisconsin</option><option value="WY">Wyoming</option>
+                    </select>
+                    <input type="text" name="house_zip" id="lead_house_zip" maxlength="5" required="required" placeholder="Zip Code*" pattern="[0-9]{5}" class="form-control w-full p-3 rounded-lg bg-blue-300 text-black placeholder-gray-700 focus:ring-2 focus:ring-yellow-300" />
+                </div>
+                                
+                <h1 class="text-3xl font-semibold text-yellow-200 mt-8 mb-6">HOA Information</h1>
+                <select class="form-control w-full p-3 rounded-lg bg-blue-300 text-black focus:ring-2 focus:ring-yellow-300" name="hoa_status" id="lead_hoa_status" required="required">
+                    <option value="">HOA (Yes/No)*</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <select class="form-control w-full p-3 rounded-lg bg-blue-300 text-black focus:ring-2 focus:ring-yellow-300" name="prop_type" id="lead_prop_type" required="required">
+                        <option value="">Property Type*</option>
+                        <option value="Single-Family">Single-Family</option>
+                        <option value="Multi-Family">Multi-Family</option>
+                        <option value="Condo">Condo</option>
+                        <option value="Land">Land</option>
+                        <option value="Mobile Only">Mobile Only</option>
+                        <option value="Mobile w/Land">Mobile w/Land</option>
+                        <option value="TownHouse">TownHouse</option>
+                        <option value="Timeshare">Timeshare</option>
+                        <option value="Other">Other</option>
+                    </select>
+                       <select class="form-control w-full p-3 rounded-lg bg-blue-300 text-black focus:ring-2 focus:ring-yellow-300" name="house_market_value" id="lead_house_market_value" required="required">
+                        <option value="">Asking Price (Approximate)*</option>
+                        <option value="$100,000.00 - $125,000.00">$100,000.00 - $125,000.00</option>
+                        <option value="$125,000.00 - $150,000.00">$125,000.00 - $150,000.00</option>
+                        <option value="$150,000.00 - $175,000.00">$150,000.00 - $175,000.00</option>
+                        <option value="$175,000.00 - $200,000.00">$175,000.00 - $200,000.00</option>
+                        <option value="$200,000.00 - $225,000.00">$200,000.00 - $225,000.00</option>
+                        <option value="$225,000.00 - $250,000.00">$225,000.00 - $250,000.00</option>
+                        <option value="$250,000.00 - $275,000.00">$250,000.00 - $275,000.00</option>
+                        <option value="$275,000.00 - $300,000.00">$275,000.00 - $300,000.00</option>
+                        <option value="$300,000.00 - $325,000.00">$300,000.00 - $325,000.00</option>
+                        <option value="$325,000.00 - $350,000.00">$325,000.00 - $350,000.00</option>
+                        <option value="$350,000.00 - $375,000.00">$350,000.00 - $375,000.00</option>
+                        <option value="$375,000.00 - $400,000.00">$375,000.00 - $400,000.00</option>
+                        <option value="$400,000.00 - $425,000.00">$400,000.00 - $425,000.00</option>
+                        <option value="$425,000.00 - $450,000.00">$425,000.00 - $450,000.00</option>
+                        <option value="$450,000.00 - $475,000.00">$450,000.00 - $475,000.00</option>
+                        <option value="$475,000.00 - $500,000.00">$475,000.00 - $500,000.00</option>
+                        <option value="$500,000.00 - $525,000.00">$500,000.00 - $525,000.00</option>
+                        <option value="$525,000.00 - $550,000.00">$525,000.00 - $550,000.00</option>
+                        <option value="$550,000.00 - $575,000.00">$550,000.00 - $575,000.00</option>
+                        <option value="$575,000.00 - $600,000.00">$575,000.00 - $600,000.00</option>
+                        <option value="$600,000.00 - $625,000.00">$600,000.00 - $625,000.00</option>
+                        <option value="$625,000.00 - $650,000.00">$625,000.00 - $650,000.00</option>
+                        <option value="$650,000.00 - $675,000.00">$650,000.00 - $675,000.00</option>
+                        <option value="$675,000.00 - $700,000.00">$675,000.00 - $700,000.00</option>
+                        <option value="$700,000.00 - $725,000.00">$700,000.00 - $725,000.00</option>
+                        <option value="$725,000.00 - $750,000.00">$725,000.00 - $750,000.00</option>
+                        <option value="$750,000.00 - $775,000.00">$750,000.00 - $775,000.00</option>
+                        <option value="$775,000.00 - $800,000.00">$775,000.00 - $800,000.00</option>
+                        <option value="$800,000.00 - $825,000.00">$800,000.00 - $825,000.00</option>
+                        <option value="$825,000.00 - $850,000.00">$825,000.00 - $850,000.00</option>
+                        <option value="$850,000.00 - $875,000.00">$850,000.00 - $875,000.00</option>
+                        <option value="$875,000.00 - $900,000.00">$875,000.00 - $900,000.00</option>
+                        <option value="$900,000.00 - $925,000.00">$900,000.00 - $925,000.00</option>
+                        <option value="$925,000.00 - $950,000.00">$925,000.00 - $950,000.00</option>
+                        <option value="$950,000.00 - $975,000.00">$950,000.00 - $975,000.00</option>
+                        <option value="$975,000.00 - $1,000,000.00">$975,000.00 - $1,000,000.00</option>
+                        <option value="Above $1,000,000.00">Above $1,000,000.00</option>
+                    </select>
+                </div>
+                      <select class="form-control w-full p-3 rounded-lg bg-blue-300 text-black focus:ring-2 focus:ring-yellow-300" name="house_bedrooms" id="lead_house_bedrooms" required="required">
+                        <option value="">Bedrooms*</option>
+                        <option value="1.0">1.0</option><option value="2.0">2.0</option><option value="3.0">3.0</option><option value="4.0">4.0</option><option value="5.0">5.0</option><option value="6.0">6.0</option><option value="7.0">7.0</option><option value="7+">7+</option>
+                    </select>
+                    <select class="form-control w-full p-3 rounded-lg bg-blue-300 text-black focus:ring-2 focus:ring-yellow-300" name="house_bathrooms" id="lead_house_bathrooms" required="required">
+                        <option value="">Bathrooms*</option>
+                        <option value="0.0">0.0</option><option value="1.0">1.0</option><option value="2.0">2.0</option><option value="3.0">3.0</option><option value="4.0">4.0</option><option value="5.0">5.0</option><option value="6.0">6.0</option><option value="7.0">7.0</option><option value="7+">7+</option>
+                    </select>
+                  <div class="flex items-center">
+                        <input type="hidden" name="is_listed" value="0" />
+                        <input type="checkbox" name="is_listed" id="lead_is_listed" value="1" class="form-check-input" />
+                        <span class="ml-2 text-white">Listed With An Agent?</span>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="hidden" name="house_occupied" value="0" />
+                        <input type="checkbox" name="house_occupied" id="lead_house_occupied" value="1" class="form-check-input" />
+                        <span class="ml-2 text-white">Is House Occupied?</span>
+                    </div>
+                <textarea placeholder="Reason You're Selling*" rows="5" class="form-control w-full p-3 rounded-lg bg-blue-300 text-black mt-4 focus:ring-2 focus:ring-yellow-300" name="house_selling_reason" id="lead_house_selling_reason" required="required"></textarea>
+                <input type="submit" name="commit" value="Get An Offer!" class="btn btn-primary btn-md mt-4 w-full bg-yellow-300 text-blue-800 p-3 rounded-lg hover:bg-yellow-400 hover:scale-105 transition duration-300 font-semibold shadow-md" data-disable-with="Get An Offer!" />
+                <p class="text-white text-sm mt-4">By clicking the button, you agree to our <a href="/terms" class="text-yellow-200">Terms and Conditions</a> and <a href="/privacy" class="text-yellow-200">Privacy Policy</a>.</p>
+                <p class="text-white text-sm mt-4">Disclaimer: By submitting your information, your consent to receive calls,texts, or emails from our real estate team regarding property opportunities, offers, or related services. This consent is not a condition of any purchase.
+Message and data rates may apply. </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-blue-700 to-green-700 text-white py-12 relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-700 to-green-700"></div>
+        <div class="container mx-auto px-4 sm:px-6 text-center relative z-10">
+            <p class="text-sm sm:text-lg">© 2025 All rights reserved.</p>
+            <p class="mt-2 sm:mt-4 text-sm sm:text-lg">Contact: <a href="tel:775 990 8015" class="text-yellow-200 hover:text-yellow-300 transition-colors duration-200">(775) 990-8015</a> | <a href="mailto:i
+                info@buyvegashouses.com" class="text-yellow-200 hover:text-yellow-300 transition-colors duration-200">info@buyvegashouses.com</a></p>
+            <p>USA, Nevada, Las Vegas</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Mobile Menu Toggle
+            const menuToggle = document.getElementById("menu-toggle");
+            const mobileMenu = document.getElementById("mobile-menu");
+
+            menuToggle.addEventListener("click", function() {
+                mobileMenu.classList.toggle("hidden");
+                mobileMenu.classList.toggle("active");
+                menuToggle.classList.toggle("active");
+            });
+
+            // Close menu when a link is clicked
+            document.querySelectorAll("#mobile-menu a").forEach(link => {
+                link.addEventListener("click", () => {
+                    mobileMenu.classList.add("hidden");
+                    mobileMenu.classList.remove("active");
+                    menuToggle.classList.remove("active");
+                });
+            });
+
+            // Form Submission
+            const sellForm = document.getElementById("sell-your-house-form");
+            if (sellForm && sellForm.tagName === 'FORM') {
+                console.log('Form found: sell-your-house-form', sellForm);
+                sellForm.addEventListener("submit", async function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log('Submit event target:', this);
+                    try {
+                        const formData = new FormData(sellForm);
+                        const data = Object.fromEntries(formData.entries());
+                        data.form_type = data.form_type || "Sell Your House";
+                        console.log('Submitting to: /api/submit', 'Data:', data);
+                        const response = await fetch("/api/submit", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                                "Accept": "application/json",
+                            },
+                            body: JSON.stringify(data),
+                            credentials: "same-origin",
+                        });
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! Status: ${response.status} - ${response.statusText}`);
+                        }
+                        const result = await response.json();
+                        if (result.success) {
+                            console.log('Form submitted successfully:', result);
+                            alert("Form submitted successfully! A confirmation email has been sent.");
+                            sellForm.reset();
+                        } else {
+                            console.error('Server error:', result.message);
+                            alert(`Error: ${result.message || "Unknown server error"}`);
+                        }
+                    } catch (err) {
+                        console.error("Submission error:", err);
+                        let errorMessage = "An error occurred while submitting the form. Please try again.";
+                        if (err.message.includes("Failed to fetch")) {
+                            errorMessage = "Unable to connect to the server. Please ensure you are online and try again.";
+                        } else if (err.message.includes("HTTP error")) {
+                            errorMessage = `Server error: ${err.message}`;
+                        }
+                        alert(errorMessage);
+                    }
+                });
+            } else {
+                console.warn("Form with ID 'sell-your-house-form' not found or not a form element:", sellForm);
+            }
+        });
+    </script>
+</body>
+</html>

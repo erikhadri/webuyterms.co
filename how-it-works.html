@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how Buy Vegas Houses works with creative financing solutions like Seller Financing, Subject to Financing, and Lease Options to sell your house fast in Las Vegas.">
+    <meta name="keywords" content="how it works, seller financing, subject to financing, lease option, Las Vegas real estate">
+    <meta name="author" content="Buy Vegas Houses">
+    <title>How It Works | Buy Vegas Houses</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="/output.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS for animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Custom Animations */
+        @keyframes glow {
+            0% { box-shadow: 0 0 10px rgba(255, 204, 0, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(255, 204, 0, 0.8); }
+            100% { box-shadow: 0 0 10px rgba(255, 204, 0, 0.5); }
+        }
+        .glow-effect { animation: glow 2s infinite; }
+        .card-hover:hover { transform: translateY(-10px) scale(1.05); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); }
+        @media (max-width: 640px) {
+            .card-hover:active { transform: translateY(-10px) scale(1.05); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); }
+        }
+        /* Custom Font Styles */
+        body { font-family: 'Poppins', sans-serif; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        nav a, button, .font-semibold { font-family: 'Montserrat', sans-serif; }
+        /* Article Card Styles */
+        .article-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 204, 0, 0.7);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .article-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 204, 0, 0.6);
+        }
+        .article-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+        .article-card h3 {
+            color: #ffd700;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .article-card p {
+            color: #fff;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        .article-card button {
+            background: #ffd700;
+            color: #1e40af;
+            padding: 0.75rem 1.5rem;
+            border-radius: 20px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .article-card button:hover {
+            background: #fbbf24;
+            transform: scale(1.1);
+        }
+        /* Infographic Styles */
+        .infographic {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            text-align: center;
+            border: 1px solid #ffd700;
+        }
+        .infographic img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        /* Custom Hero Image Styling */
+        .hero-image {
+            transition: transform 0.3s ease;
+        }
+        .hero-image:hover {
+            transform: scale(1.05);
+        }
+        /* Stunning Section Divider */
+        .section-divider {
+            position: relative;
+            height: 80px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+        .section-divider::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, transparent, #ffd700, transparent);
+            animation: slideGradient 3s infinite linear;
+        }
+        .section-divider::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: url('https://img.icons8.com/ios-filled/50/ffd700/home.png') no-repeat center;
+            background-size: contain;
+            animation: pulseIcon 2s infinite ease-in-out;
+            z-index: 1;
+        }
+        @keyframes slideGradient {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        @keyframes pulseIcon {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+    </style>
+</head>
+<body class="text-gray-800 bg-gradient-to-br from-blue-700 to-green-700">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full bg-gradient-to-r from-blue-700 to-green-700 shadow-lg z-50">
+        <div class="container mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+            <div class="text-2xl font-extrabold text-white">Buy Vegas Houses</div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-white hover:text-yellow-200 transition-colors">Home</a>
+                <a href="sell.html" class="text-white hover:text-yellow-200 transition-colors">Sell</a>
+                <a href="about.html" class="text-white hover:text-yellow-200 transition-colors">About</a>
+                <a href="contact.html" class="text-white hover:text-yellow-200 transition-colors">Contact</a>
+                <a href="how-it-works.html" class="text-white hover:text-yellow-200 transition-colors">How It Works</a>
+            </nav>
+            <a href="sell.html" class="bg-yellow-300 text-blue-800 px-4 py-2 rounded-full hover:bg-yellow-400 transition">Sell Your Home</a>
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-gradient-to-b from-blue-700 to-green-700 shadow-lg absolute w-full">
+            <nav class="flex flex-col items-center py-4 space-y-4">
+                <a href="index.html" class="text-white hover:text-yellow-200 transition-colors">Home</a>
+                <a href="sell.html" class="text-white hover:text-yellow-200 transition-colors">Sell</a>
+                <a href="about.html" class="text-white hover:text-yellow-200 transition-colors">About</a>
+                <a href="contact.html" class="text-white hover:text-yellow-200 transition-colors">Contact</a>
+                <a href="how-it-works.html" class="text-white hover:text-yellow-200 transition-colors">How It Works</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative bg-cover bg-center h-screen" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1920&auto=format&fit=crop');" data-aos="fade-up">
+        <div class="absolute inset-0 bg-gradient-to-b from-blue-700/60 to-green-700/60"></div>
+        <div class="container mx-auto px-4 sm:px-6 h-full flex items-center justify-center relative z-10">
+            <div class="text-center text-white">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 drop-shadow-lg animate-fade-in">How It Works</h1>
+                <div class="flex justify-center mb-8 sm:mb-10">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1920&auto=format&fit=crop" alt="Satisfied Seller" class="w-48 h-48 sm:w-72 sm:h-72 rounded-full border-8 border-yellow-300 shadow-2xl glow-effect hero-image">
+                </div>
+                <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-6 sm:mb-8 font-light tracking-wide drop-shadow-md">Discover Our Creative Financing Solutions</p>
+                <a href="#how-it-works" class="inline-block bg-yellow-300 text-blue-800 px-6 py-3 rounded-full text-lg font-semibold shadow-md border border-yellow-400 hover:bg-yellow-400 hover:text-blue-900 hover:scale-105 transition-all duration-300 glow-effect">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-16 sm:py-24 bg-gradient-to-br from-blue-700 to-green-700 relative" data-aos="fade-up">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-700 to-green-700"></div>
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-white mb-8 sm:mb-12 text-center drop-shadow-md">How We Make It Happen</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-10">
+                <div class="bg-white/20 backdrop-blur-md p-6 sm:p-8 rounded-xl shadow-xl border border-white/40 transform card-hover transition-all duration-300 text-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/616/616490.png" alt="Step 1 Icon" class="mx-auto mb-4 sm:mb-6 w-12 sm:w-16 h-12 sm:h-16 animate-pulse">
+                    <h3 class="text-xl sm:text-2xl font-semibold text-yellow-200 mb-2 sm:mb-4">Step 1: Contact Us</h3>
+                    <p class="text-white text-sm sm:text-base mb-4">Reach out by calling (775) 990-8015 or submitting your property details online. We’ll review your situation—and get started right away.</p>
+                    <a href="contact.html#contact-form" class="inline-block bg-yellow-300 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold shadow-md border border-yellow-400 hover:bg-yellow-400 hover:text-blue-900 hover:scale-105 transition-all duration-300 glow-effect">Get in Touch</a>
+                </div>
+                <div class="bg-white/20 backdrop-blur-md p-6 sm:p-8 rounded-xl shadow-xl border border-white/40 transform card-hover transition-all duration-300 text-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1087/1087085.png" alt="Step 2 Icon" class="mx-auto mb-4 sm:mb-6 w-12 sm:w-16 h-12 sm:h-16 animate-pulse">
+                    <h3 class="text-xl sm:text-2xl font-semibold text-yellow-200 mb-2 sm:mb-4">Step 2: Customize Your Deal</h3>
+                    <p class="text-white text-sm sm:text-base mb-4">We’ll tailor a solution—Seller Financing for steady income, Subject To for instant relief, or Lease Option for flexibility. You pick what fits your timeline and financial goals.</p>
+                    <a href="#articles" class="inline-block bg-yellow-300 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold shadow-md border border-yellow-400 hover:bg-yellow-400 hover:text-blue-900 hover:scale-105 transition-all duration-300 glow-effect">See Options</a>
+                </div>
+                <div class="bg-white/20 backdrop-blur-md p-6 sm:p-8 rounded-xl shadow-xl border border-white/40 transform card-hover transition-all duration-300 text-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/271/271228.png" alt="Step 3 Icon" class="mx-auto mb-4 sm:mb-6 w-12 sm:w-16 h-12 sm:h-16 animate-pulse">
+                    <h3 class="text-xl sm:text-2xl font-semibold text-yellow-200 mb-2 sm:mb-4">Step 3: Close with Ease</h3>
+                    <p class="text-white text-sm sm:text-base mb-4">We handle the paperwork and close in as little as 14 days—no repairs, no fees, no stress. You walk away with cash or peace of mind, depending on your chosen option.</p>
+                    <a href="sell.html#sell-your-house" class="inline-block bg-yellow-300 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold shadow-md border border-yellow-400 hover:bg-yellow-400 hover:text-blue-900 hover:scale-105 transition-all duration-300 glow-effect">Close Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Articles Section -->
+    <section id="articles" class="py-16 sm:py-24 bg-gradient-to-br from-blue-700 to-green-700 relative" data-aos="fade-up">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-700 to-green-700"></div>
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-white mb-8 sm:mb-12 text-center drop-shadow-lg">Our Creative Financing Options</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-10">
+                <!-- Seller Financing Article -->
+                <div class="article-card" id="seller-financing-article">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1920&auto=format&fit=crop" alt="Seller Financing Illustration">
+                    <h3>Seller Financing</h3>
+                    <p>In seller financing, the seller acts as the lender, allowing the buyer to pay them directly over time instead of securing a bank loan. It’s a flexible option for quick sales and buyers who can’t qualify traditionally.</p>
+                    <div class="infographic">
+                        <img src="https://miro.medium.com/v2/resize:fit:682/1*PT1xbh25gK-NA3kgIOlhmA@2x.jpeg" alt="Seller Financing Infographic">
+                        <p class="text-white text-sm mt-2">Steps: Agree on terms, sign promissory note, make payments.</p>
+                    </div>
+                    <p>This method offers sellers steady income and buyers a path to ownership with fewer hurdles. It’s ideal for fast closings in Las Vegas.</p>
+                    <button onclick="window.location.href='sell.html#sell-your-house'">Get Started</button>
+                </div>
+                <!-- Subject to Financing Article -->
+                <div class="article-card" id="subject-to-financing-article">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1920&auto=format&fit=crop" alt="Subject to Financing Illustration">
+                    <h3>Subject to Financing</h3>
+                    <p>With subject to financing, the buyer takes over the seller’s existing mortgage payments without a new loan. The mortgage stays in the seller’s name, but the property title transfers to the buyer.</p>
+                    <div class="infographic">
+                        <img src="https://mlblmukxgatt.i.optimole.com/w:1024/h:768/q:mauto/f:best/ig:avif/https://followmyflipsteps.com/wp-content/uploads/2020/05/Taking-Over-Payments-Subject-To.png" alt="Subject to Financing Infographic">
+                        <p class="text-white text-sm mt-2">Process: Negotiate, transfer title, take over payments.</p>
+                    </div>
+                    <p>It’s a fast solution for sellers in distress and buyers avoiding bank approvals, leveraging existing loan terms.</p>
+                    <button onclick="window.location.href='sell.html#sell-your-house'">Explore Now</button>
+                </div>
+                <!-- Lease Option Article -->
+                <div class="article-card" id="lease-option-article">
+                    <img src="https://media.istockphoto.com/id/1211174464/photo/beautiful-residential-home-exterior-on-bright-sunny-day-with-green-grass-and-blue-sky.jpg?s=612x612&w=0&k=20&c=h0XtWGD8asz_hfDVus7SWwOrtAFlZYfr7wdStKCQv14=" alt="Lease Option Illustration">
+                    <h3>Lease Option</h3>
+                    <p>A lease option lets the buyer rent the property with the option to buy it later at a set price. Part of the rent may count toward the purchase, blending renting with ownership potential.</p>
+                    <div class="infographic">
+                        <img src="https://img.freepik.com/premium-vector/property-infographic-10-option-conceptproperty-type-amenities-lease-contract-floor-plan-simple-icons_159242-12818.jpg" alt="Lease Option Infographic">
+                        <p class="text-white text-sm mt-2">Flow: Lease, pay option fee, decide to buy or walk away.</p>
+                    </div>
+                    <p>Perfect for buyers needing time to prepare and sellers wanting income with a future sale locked in.</p>
+                    <button onclick="window.location.href='sell.html#sell-your-house'">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Contact Us Section -->
+    <section class="py-24 bg-gradient-to-br from-blue-700 to-green-700" data-aos="fade-up">
+        <div class="container mx-auto px-6">
+            <form id="basic-contact-form" action="javascript:void(0);" method="post" class="form-box bg-gradient-to-br from-blue-700 to-green-700 backdrop-blur-lg p-6 sm:p-8 rounded-2xl shadow-2xl border border-white/40 max-w-4xl mx-auto" novalidate>
+                <input type="hidden" name="form_type" value="Basic Contact">
+                <div class="container-block form-wrapper">
+                    <p class="text-2xl sm:text-3xl font-semibold text-yellow-200 mb-4">Get in Touch</p>
+                    <p class="text-white text-sm sm:text-base mb-6">Contact us for a free cash offer today!</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                        <div>
+                            <p class="text-white text-sm sm:text-base">FIRST NAME</p>
+                            <input class="input w-full p-3 sm:p-4 rounded-lg bg-blue-300 text-black placeholder-gray-700 focus:ring-2 focus:ring-yellow-300" name="seller_f_name" id="contact_seller_f_name" placeholder="Enter first name...*" required>
+                        </div>
+                        <div>
+                            <p class="text-white text-sm sm:text-base">LAST NAME</p>
+                            <input class="input w-full p-3 sm:p-4 rounded-lg bg-blue-300 text-black placeholder-gray-700 focus:ring-2 focus:ring-yellow-300" name="seller_l_name" id="contact_seller_l_name" placeholder="Enter last name...*" required>
+                        </div>
+                        <div>
+                            <p class="text-white text-sm sm:text-base">EMAIL</p>
+                            <input class="input w-full p-3 sm:p-4 rounded-lg bg-blue-300 text-black placeholder-gray-700 focus:ring-2 focus:ring-yellow-300" name="seller_email" id="contact_seller_email" type="email" placeholder="Enter email...*" required>
+                        </div>
+                        <div>
+                            <p class="text-white text-sm sm:text-base">PHONE NUMBER</p>
+                            <input class="input w-full p-3 sm:p-4 rounded-lg bg-blue-300 text-black placeholder-gray-700 focus:ring-2 focus:ring-yellow-300" name="seller_phone" id="contact_seller_phone" placeholder="Enter phone number...*" required>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <p class="text-white text-sm sm:text-base">ASKING PRICE</p>
+                            <input class="input w-full p-3 sm:p-4 rounded-lg bg-blue-300 text-black placeholder-gray-700 focus:ring-2 focus:ring-yellow-300" name="house_market_value" id="contact_house_market_value" placeholder="Enter asking price...*" required>
+                        </div>
+                        <div>
+                            <p class="text-white text-sm sm:text-base mb-2">HOA</p>
+                            <div class="flex items-center space-x-4">
+                                <label class="text-white flex items-center space-x-2">
+                                    <input type="radio" name="hoa_status" value="Yes" class="form-radio text-yellow-300" required>
+                                    <span>Yes</span>
+                                </label>
+                                <label class="text-white flex items-center space-x-2">
+                                    <input type="radio" name="hoa_status" value="No" class="form-radio text-yellow-300">
+                                    <span>No</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-white text-sm sm:text-base mb-2">GATED COMMUNITY</p>
+                            <div class="flex items-center space-x-4">
+                                <label class="text-white flex items-center space-x-2">
+                                    <input type="radio" name="gated_community" value="Yes" class="form-radio text-yellow-300" required>
+                                    <span>Yes</span>
+                                </label>
+                                <label class="text-white flex items-center space-x-2">
+                                    <input type="radio" name="gated_community" value="No" class="form-radio text-yellow-300">
+                                    <span>No</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="submit" value="Submit" class="w-full bg-yellow-300 text-blue-800 p-3 sm:p-4 rounded-lg hover:bg-yellow-400 hover:scale-105 transition duration-300 font-semibold shadow-md mt-6" />
+                    <p class="text-white text-sm mt-4">Disclaimer: By submitting your information, your consent to receive calls,texts, or emails from our real estate team regarding property opportunities, offers, or related services. This consent is not a condition of any purchase.
+Message and data rates may apply. </p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-blue-700 to-green-700 text-white py-8 sm:py-12 relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-700 to-green-700"></div>
+        <div class="container mx-auto px-4 sm:px-6 text-center relative z-10">
+            <p class="text-sm sm:text-lg">© 2025 All rights reserved.</p>
+            <p class="mt-2 sm:mt-4 text-sm sm:text-lg">Contact: <a href="tel:775 990 8015" class="text-yellow-200 hover:text-yellow-300 transition-colors duration-200">(775) 990-8015</a> | <a href="mailto:info@buyvegashouses.com" class="text-yellow-200 hover:text-yellow-300 transition-colors duration-200">info@buyvegashouses.com</a></p>
+            <p>USA, Nevada, Las Vegas</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        AOS.init({ duration: 1000 });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Contact form submission
+        const contactForm = document.getElementById("basic-contact-form");
+        if (contactForm && contactForm.tagName === 'FORM') {
+            console.log('Form found: basic-contact-form', contactForm);
+            contactForm.addEventListener("submit", async function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('Submit event target:', this);
+                try {
+                    const formData = new FormData(contactForm);
+                    const data = Object.fromEntries(formData.entries());
+                    data.form_type = data.form_type || "Basic Contact";
+                    console.log('Submitting to: /api/submit', 'Data:', data);
+                    const response = await fetch("/api/submit", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Accept": "application/json",
+                        },
+                        body: JSON.stringify(data),
+                        credentials: "same-origin",
+                    });
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status} - ${response.statusText}`);
+                    }
+                    const result = await response.json();
+                    if (result.success) {
+                        console.log('Form submitted successfully:', result);
+                        alert("Form submitted successfully! A confirmation email has been sent.");
+                        contactForm.reset();
+                    } else {
+                        console.error('Server error:', result.message);
+                        alert(`Error: ${result.message || "Unknown server error"}`);
+                    }
+                } catch (err) {
+                    console.error("Submission error:", err);
+                    let errorMessage = "An error occurred while submitting the form. Please try again.";
+                    if (err.message.includes("Failed to fetch")) {
+                        errorMessage = "Unable to connect to the server. Please ensure you are online and try again.";
+                    } else if (err.message.includes("HTTP error")) {
+                        errorMessage = `Server error: ${err.message}`;
+                    }
+                    alert(errorMessage);
+                }
+            });
+        } else {
+            console.warn("Form with ID 'basic-contact-form' not found or not a form element:", contactForm);
+        }
+    </script>
+</body>
+</html>
