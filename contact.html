@@ -3,83 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Buy Vegas Houses for a free creative offer on your Las Vegas home. We respond within 24 hours—no fees, no hassle.">
-    <meta name="keywords" content="contact us, sell house fast Las Vegas, creative offers for houses, Buy Vegas Houses">
+    <meta name="description" content="Learn how Buy Vegas Houses works with creative financing solutions like Seller Financing, Subject to Financing, and Lease Options to sell your house fast in Las Vegas.">
+    <meta name="keywords" content="how it works, seller financing, subject to financing, lease option, Las Vegas real estate">
     <meta name="author" content="Buy Vegas Houses">
-    <title>Contact Us | Buy Vegas Houses - Sell Your House Fast in Las Vegas</title>
-    <link rel="stylesheet" href="/styles.css" />
+    <title>How It Works | Buy Vegas Houses</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <link href="/output.css" rel="stylesheet">
-    <!-- Comment out Google Fonts to reduce external dependencies -->
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&family=Montserrat:wght@500&display=swap" rel="stylesheet"> -->
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS for animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-784768203"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-784768203');
+    </script>
+
     <style>
-        /* Fallback font styles */
-        body { font-family: Arial, sans-serif; }
-        h1, h2, h3 { font-family: Georgia, serif; }
-        nav a, button, .font-semibold { font-family: Helvetica, sans-serif; }
-        /* Flip Card Styles */
-        .flip-card {
-            perspective: 1000px;
-            width: 100%;
-            height: 300px;
-        }
-        .flip-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.6s;
-            transform-style: preserve-3d;
-        }
-        .flip-card:hover .flip-card-inner, .flip-card:active .flip-card-inner {
-            transform: rotateY(180deg);
-        }
-        .flip-card-front, .flip-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: 1rem;
-            overflow: hidden;
-        }
-        .flip-card-front { background-color: #fff; }
-        .flip-card-back { background-color: #fff; transform: rotateY(180deg); }
-        .flip-card img { width: 100%; height: 100%; object-fit: cover; }
-        /* Card Styling */
-        .contact-card-1, .contact-card-2 {
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
-            backdrop-filter: blur(12px);
-            border: 3px solid rgba(255, 204, 0, 0.7);
-            border-radius: 25px;
-            padding: 2.5rem;
-            transition: box-shadow 0.3s ease;
-        }
-        .contact-card-1:hover, .contact-card-2:hover {
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
-        }
-        .card-image {
-            position: relative;
-            width: 100%;
-            height: 100%; /* Full card height */
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            border: 2px solid #ffd700;
-        }
-        .card-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 13px;
-        }
-        /* Animations */
-        .glow-effect {
-            animation: glow 2s infinite;
-        }
+        /* Custom Animations */
         @keyframes glow {
             0% { box-shadow: 0 0 10px rgba(255, 204, 0, 0.5); }
             50% { box-shadow: 0 0 20px rgba(255, 204, 0, 0.8); }
             100% { box-shadow: 0 0 10px rgba(255, 204, 0, 0.5); }
         }
-        /* Section Divider */
+        .glow-effect { animation: glow 2s infinite; }
+        .card-hover:hover { transform: translateY(-10px) scale(1.05); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); }
+        @media (max-width: 640px) {
+            .card-hover:active { transform: translateY(-10px) scale(1.05); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); }
+        }
+        /* Custom Font Styles */
+        body { font-family: 'Poppins', sans-serif; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        nav a, button, .font-semibold { font-family: 'Montserrat', sans-serif; }
+        /* Article Card Styles */
+        .article-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 204, 0, 0.7);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .article-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 204, 0, 0.6);
+        }
+        .article-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+        .article-card h3 {
+            color: #ffd700;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .article-card p {
+            color: #fff;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        .article-card button {
+            background: #ffd700;
+            color: #1e40af;
+            padding: 0.75rem 1.5rem;
+            border-radius: 20px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .article-card button:hover {
+            background: #fbbf24;
+            transform: scale(1.1);
+        }
+        /* Infographic Styles */
+        .infographic {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            text-align: center;
+            border: 1px solid #ffd700;
+        }
+        .infographic img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        /* Custom Hero Image Styling */
+        .hero-image {
+            transition: transform 0.3s ease;
+        }
+        .hero-image:hover {
+            transform: scale(1.05);
+        }
+        /* Stunning Section Divider */
         .section-divider {
             position: relative;
             height: 80px;
@@ -115,18 +145,6 @@
         @keyframes pulseIcon {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.2); }
-        }
-        /* Mobile Responsiveness */
-        @media (max-width: 640px) {
-            .h-screen { height: auto; min-height: 100vh; }
-            .text-4xl { font-size: 2rem; }
-            .text-5xl { font-size: 2.5rem; }
-            .text-6xl { font-size: 3rem; }
-            .text-7xl { font-size: 3.5rem; }
-            .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
-            .contact-card-1, .contact-card-2 { padding: 1.5rem; }
-            .card-image { height: 100%; } /* Ensure full height on mobile */
-            .flip-card { height: 250px; }
         }
     </style>
 </head>
