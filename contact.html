@@ -122,7 +122,7 @@
             position: absolute;
             width: 100%;
             height: 4px;
-            background: linear-gradient(to right, transparent, #ffd700, transparent breath);
+            background: linear-gradient(to right, transparent, #ffd700, transparent);
             animation: slideGradient 3s infinite linear;
         }
         .section-divider::after {
@@ -171,17 +171,43 @@
             backdrop-filter: blur(10px);
             border: 2px solid rgba(255, 204, 0, 0.7);
             border-radius: 15px;
-            padding: 2rem;
+            padding: 1rem;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
         .flip-card-back {
             transform: rotateY(180deg);
+        }
+        .card-image {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 10px;
         }
         .card-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             border-radius: 10px;
+        }
+        .contact-card-1 .text-lg {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .contact-card-1 a {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            line-height: 1.25;
+            max-width: 90%;
+            text-align: center;
+        }
+        @media (min-width: 640px) {
+            .contact-card-1 .text-lg {
+                font-size: 1rem;
+            }
+            .contact-card-1 a {
+                padding: 0.75rem 1.5rem;
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -190,9 +216,7 @@
     <header class="fixed top-0 left-0 w-full bg-gradient-to-r from-blue-700 to-green-700 shadow-lg z-50">
         <div class="container mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
             <div class="text-2xl font-extrabold text-white">Buy Vegas Houses</div>
-            <nav class="hidden
-
- md:flex space-x-6">
+            <nav class="hidden md:flex space-x-6">
                 <a href="index.html" class="text-white hover:text-yellow-200 transition-colors">Home</a>
                 <a href="sell.html" class="text-white hover:text-yellow-200 transition-colors">Sell</a>
                 <a href="about.html" class="text-white hover:text-yellow-200 transition-colors">About</a>
@@ -206,7 +230,7 @@
                 </svg>
             </button>
         </div>
-        <div id="mobile-menu" class="hiddenunless md:hidden bg-gradient-to-b from-blue-700 to-green-700 shadow-lg absolute w-full">
+        <div id="mobile-menu" class="hidden md:hidden bg-gradient-to-b from-blue-700 to-green-700 shadow-lg absolute w-full">
             <nav class="flex flex-col items-center py-4 space-y-4">
                 <a href="index.html" class="text-white hover:text-yellow-200 transition-colors">Home</a>
                 <a href="sell.html" class="text-white hover:text-yellow-200 transition-colors">Sell</a>
@@ -249,9 +273,9 @@
                     <div class="flip-card-inner">
                         <div class="flip-card-front contact-card-1">
                             <h3 class="text-3xl font-bold text-yellow-200 mb-6 drop-shadow-md">Selling Your Home?</h3>
-                            <p class="text-white text-lg mb-6">Interested in selling your Las Vegas house fast? Call us or get a free offer! Tel: 7759908015</p>
+                            <p class="text-white text-lg mb-6">Interested in selling your Las Vegas house fast? Call us to get a free offer! Tel: 7759908015</p>
                             <div class="text-center">
-                                <a href="sell.html" class="inline-block bg-yellow-300 text-blue-800 px-6 py-3 rounded-full text-lg font-semibold shadow-md border border-yellow-400 hover:bg-yellow-400 hover:text-blue-900 hover:scale-105 transition-all duration-300 glow-effect sm:text-sm md:text-lg">Get Creative Finance Offer</a>
+                                <a href="sell.html" class="inline-block bg-yellow-300 text-blue-800 rounded-full font-semibold shadow-md border border-yellow-400 hover:bg-yellow-400 hover:text-blue-900 hover:scale-105 transition-all duration-300 glow-effect">Get Creative Finance Offer</a>
                             </div>
                         </div>
                         <div class="flip-card-back contact-card-1">
@@ -288,7 +312,9 @@
             <div class="contact_us">
                 <div class="responsive-container-block big-container">
                     <div class="responsive-container-block container">
-                        <form id="contact-form" class="form-box bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-lg p-6 sm:p-8 rounded-2xl shadow-2xl border border-white/40" method="post" action="javascript:void(0);" novalidate>
+                        <form id="contact-form" class="form-box bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-lg p-6 sm:p-8 rounded-2xl
+
+ shadow-2xl border border-white/40" method="post" action="javascript:void(0);" novalidate>
                             <input type="hidden" name="form_type" value="Contact Form">
                             <div class="container-block form-wrapper">
                                 <p class="text-blk contactus-head text-2xl sm:text-3xl font-semibold text-yellow-200 mb-4">Get in Touch</p>
