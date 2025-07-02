@@ -6,12 +6,10 @@
     <meta name="description" content="Learn how Buy Vegas Houses works with creative financing solutions like Seller Financing, Subject to Financing, and Lease Options to sell your house fast in Las Vegas.">
     <meta name="keywords" content="how it works, seller financing, subject to financing, lease option, Las Vegas real estate">
     <meta name="author" content="Buy Vegas Houses">
-    <title>How It Works | Buy Vegas Houses</title>
+    <title>Contact Us | Buy Vegas Houses</title>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&family=Montserrat:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link href="/output.css" rel="stylesheet">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- AOS for animations -->
@@ -23,7 +21,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'AW-784768203');
     </script>
 
@@ -146,6 +143,46 @@
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.2); }
         }
+        /* Flip Card Styles */
+        .flip-card {
+            perspective: 1000px;
+            height: 300px;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 204, 0, 0.7);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body class="text-gray-800 bg-gradient-to-br from-blue-700 to-green-700">
@@ -191,7 +228,7 @@
                         <input type="text" placeholder="Enter Your Address" class="w-full p-3 sm:p-4 mb-4 border border-white/40 rounded-lg bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-300 transition-all text-sm sm:text-base">
                         <button type="submit" onclick="window.location.href='contact.html#contact-form-section'" class="w-full bg-yellow-300 text-blue-800 p-3 sm:p-4 rounded-lg hover:bg-yellow-400 hover:text-blue-900 hover:scale-105 transition-all duration-300 font-semibold shadow-md text-sm sm:text-base">Submit</button>
                     </form>
-                    <p class="mt-4 sm:mt-6 text-sm sm:text-lg font-medium">Or Call Us: <a href="tel:775 990 8015" class="text-yellow-200 hover:text-yellow-300 transition-colors duration-200 font-bold">(775) 990-8015</a></p>
+                    <p class="mt-4 sm:mt-6 text-sm sm:text-lg font-medium">Or Call Us: <a href="tel:7759908015" class="text-yellow-200 hover:text-yellow-300 transition-colors duration-200 font-bold">(775) 990-8015</a></p>
                 </div>
             </div>
         </div>
@@ -277,14 +314,13 @@
                                     </div>
                                 </div>
                                 <button type="submit" class="submit-btn w-full bg-yellow-300 text-blue-800 p-3 sm:p-4 rounded-lg hover:bg-yellow-400 hover:text-blue-900 hover:scale-105 transition-all duration-300 font-semibold shadow-md mt-4 sm:mt-6">Submit</button>
-                                  <p class="text-white text-sm mt-4">Disclaimer: By submitting your information, you consent to receive calls, texts,  or emails from our real estate team regarding property opportunities, offers, or related services. This consent is not a condition of any purchase.
-Message and data rates may apply. </p>
+                                <p class="text-white text-sm mt-4">Disclaimer: By submitting your information, you consent to receive calls, texts, or emails from our real estate team regarding property opportunities, offers, or related services. This consent is not a condition of any purchase. Message and data rates may apply.</p>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
-            <p class="text-center mt-4 sm:mt-6 text-base sm:text-xl text-white font-medium">Or Call Us: <a href="tel:775 990 8015" class="text-yellow-200 hover:text-yellow-300 transition-colors duration-200 font-bold">(775) 990-8015</a></p>
+            <p class="text-center mt-4 sm:mt-6 text-base sm:text-xl text-white font-medium">Or Call Us: <a href="tel:7759908015" class="text-yellow-200 hover:text-yellow-300 transition-colors duration-200 font-bold">(775) 990-8015</a></p>
         </div>
     </section>
 
@@ -296,7 +332,7 @@ Message and data rates may apply. </p>
         <div class="absolute inset-0 bg-gradient-to-r from-blue-700 to-green-700"></div>
         <div class="container mx-auto px-4 sm:px-6 text-center relative z-10">
             <p class="text-sm sm:text-lg">© 2025 All rights reserved.</p>
-            <p class="mt-2 sm:mt-4 text-sm sm:text-lg">Contact: <a href="tel:775 990 8015" class="text-yellow-200 hover:text-yellow-300 transition-colors duration-200">(775) 990-8015</a> | <a href="mailto:info@buyvegashouses.com" class="text-yellow-200 hover:text-yellow-300 transition-colors duration-200">info@buyvegashouses.com</a></p>
+            <p class="mt-2 sm:mt-4 text-sm sm:text-lg">Contact: <a href="tel:7759908015" class="text-yellow-200 hover:text-yellow-300 transition-colors duration-200">(775) 990-8015</a> | <a href="mailto:info@buyvegashouses.com" class="text-yellow-200 hover:text-yellow-300 transition-colors duration-200">info@buyvegashouses.com</a></p>
             <p>USA, Nevada, Las Vegas</p>
         </div>
     </footer>
@@ -330,7 +366,7 @@ Message and data rates may apply. </p>
                         const formData = new FormData(contactForm);
                         const data = Object.fromEntries(formData.entries());
                         data.form_type = data.form_type || "Contact Form";
-                        console.log('Submitting to: /api/submit', 'Data:', data);
+                        console.log('Attempting to submit to: /api/submit', 'Data:', data);
                         const response = await fetch("/api/submit", {
                             method: "POST",
                             headers: {
@@ -339,6 +375,8 @@ Message and data rates may apply. </p>
                             },
                             body: JSON.stringify(data),
                             credentials: "same-origin",
+                        }).catch(err => {
+                            throw new Error(`Fetch error: ${err.message}`);
                         });
                         if (!response.ok) {
                             throw new Error(`HTTP error! Status: ${response.status} - ${response.statusText}`);
@@ -354,11 +392,11 @@ Message and data rates may apply. </p>
                         }
                     } catch (err) {
                         console.error("Submission error:", err);
-                        let errorMessage = "An error occurred while submitting the form. Please try again.";
+                        let errorMessage = "An error occurred while submitting the form. Please try again or contact us directly at (775) 990-8015.";
                         if (err.message.includes("Failed to fetch")) {
-                            errorMessage = "Unable to connect to the server. Please ensure you are online and try again.";
+                            errorMessage = "Unable to connect to the server. Please ensure you are online and try again, or contact us at (775) 990-8015.";
                         } else if (err.message.includes("HTTP error")) {
-                            errorMessage = `Server error: ${err.message}`;
+                            errorMessage = `Server error: ${err.message}. Please try again or contact us at (775) 990-8015.";
                         }
                         alert(errorMessage);
                     }
